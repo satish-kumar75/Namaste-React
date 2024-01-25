@@ -10,28 +10,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 0.5rem 2rem;
   border: 1px solid #eaedf3;
   box-shadow: 3px 3px 20px #eaedf3;
   .logo-container {
     width: 140px;
-    position: relative;
-    p {
-      font-weight: 700;
-      font-size: 40px;
-      font-family: Aladin;
-      font-style: italic;
-      background: -webkit-linear-gradient(62deg, #000000 24%, #959138 65%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    img{
+      height: 50px;
+      width: 160px;
     }
+    // position: relative;
+    // p {
+    //   font-weight: 700;
+    //   font-size: 40px;
+    //   font-family: Aladin;
+    //   font-style: italic;
+    //   background: -webkit-linear-gradient(62deg, #000000 24%, #959138 65%);
+    //   -webkit-background-clip: text;
+    //   -webkit-text-fill-color: transparent;
+    // }
 
-    img {
-      position: absolute;
-      top: -9px;
-      left: 8px;
-      transform: rotate(32deg);
-    }
+    // img {
+    //   position: absolute;
+    //   top: -9px;
+    //   left: 8px;
+    //   transform: rotate(32deg);
+    // }
   }
   .nav-item ul {
     display: flex;
@@ -47,7 +51,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 15px 20px;
+  margin: 15px 50px;
   .res-card {
     border-radius: 4px;
     height: 350px;
