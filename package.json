@@ -1,24 +1,27 @@
 {
-  "name": "namaste-react",
-  "version": "1.0.0",
-  "description": "This is Namaste React by Akhsay Saini",
+  "name": "swiggy-clone",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "test"
-  },
-  "author": "Satish Kumar",
-  "license": "ISC",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.10.3",
-    "parcel": "^2.10.3",
-    "process": "^0.11.10"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-shimmer-effects": "^1.0.3"
   },
-  "browsersList": [
-    "last 3 versions"
-  ]
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.0.8"
+  }
 }

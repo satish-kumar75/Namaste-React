@@ -1,4 +1,5 @@
-import { CDN_URL, STAR } from "../utils/contants";
+import { CDN_URL } from "../utils/contants";
+import star from "../assets/star.svg";
 
 const ResturantCard = (props) => {
   const { resData } = props;
@@ -11,7 +12,7 @@ const ResturantCard = (props) => {
       </div>
       <h3>{name}</h3>
       <div className="rating">
-        <p>{STAR}</p>
+        <img src={star} alt="Rating Star" />
         <h4>{avgRating}</h4>
         <span></span>
         <h4>{slaString}</h4>
