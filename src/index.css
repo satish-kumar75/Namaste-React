@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
+:root {
+  --primary: hsl(36, 98%, 51%);
+  --secondary: hsl(40, 67%, 28%);
+  --darkPrimary: hsl(36, 91%, 49%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,14 +41,33 @@
         margin-left: 20px;
         font-weight: 500;
         cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: #000000;
+
+          &:hover {
+            color: var(--primary);
+
+          }
+        }
       }
-      .login-btn{
+
+      .login-btn {
+        background-color: var(--primary);
+        border: 1px solid var(--secondary);
+        color: #fff;
         font-weight: 500;
         margin-left: 20px;
         padding: 5px 0;
         width: 70px;
         border-radius: 10px;
         cursor: pointer;
+
+        &:hover {
+          background-color: var(--darkPrimary);
+
+        }
       }
     }
   }
