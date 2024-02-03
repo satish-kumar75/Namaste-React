@@ -2,7 +2,7 @@
 import Shimmer from "./Shimmer";
 import "./menu.scss";
 import { useParams } from "react-router-dom";
-import useResturantMenu from "./useResturantMenu";
+import useResturantMenu from "../utils/useResturantMenu";
 
 const ResturantMenu = () => {
   const { resId } = useParams();
@@ -52,10 +52,14 @@ const ResturantMenu = () => {
             {title} ({itemCards.length})
           </h2>
           {itemCards.map((item) => (
-            <div className="menu-detail" key={item.id}>
+            <div className="menu-detail" key={item.card.info.id}>
               <div className="menu-desc">
                 <h4>{item.card.info.name}</h4>
-                <p>₹{item.card.info.price / 100}</p>
+                <p>
+                  ₹
+                  {item.card.info.defaultPrice / 100 ||
+                    item.card.info.price / 100}
+                </p>
                 <p>{item.card.info.description}</p>
               </div>
               <div className="menu-img">
