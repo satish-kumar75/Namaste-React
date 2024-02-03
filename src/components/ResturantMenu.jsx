@@ -1,29 +1,14 @@
 /* eslint-disable no-unsafe-optional-chaining */
-import { useEffect, useState } from "react";
-import { MENU_URL } from "../utils/contants";
 import Shimmer from "./Shimmer";
 import "./menu.scss";
 import { useParams } from "react-router-dom";
+import useResturantMenu from "./useResturantMenu";
 
 const ResturantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchInfo();
-  }, []);
+  const resInfo = useResturantMenu(resId);
 
-  const fetchInfo = async () => {
-    try {
-      const data = await fetch(MENU_URL + resId);
-
-      const json = await data.json();
-      setResInfo(json.data);
-      console.log(json.data);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
   if (resInfo === null) return <Shimmer />;
 
   const {
@@ -38,10 +23,10 @@ const ResturantMenu = () => {
   const { slaString, lastMileTravelString } =
     resInfo?.cards?.[0]?.card?.card?.info?.sla;
 
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  const { itemCards, title } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
-  // console.log(itemCards[0]?.card.info.name);
+  console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
 
   return (
     <div className="menu-container">
@@ -63,7 +48,9 @@ const ResturantMenu = () => {
       </div>
       <div className="menus">
         <div className="recommended-menu">
-          <h2>Recommended ({itemCards.length})</h2>
+          <h2>
+            {title} ({itemCards.length})
+          </h2>
           {itemCards.map((item) => (
             <div className="menu-detail" key={item.id}>
               <div className="menu-desc">
