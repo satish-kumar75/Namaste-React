@@ -1,10 +1,9 @@
 import { CDN_URL } from "../utils/contants";
 import star from "../assets/star.svg";
 
-const ResturantCard = (props) => {
-  const { resData } = props;
+const ResturantCard = ({ resData }) => {
   const { name, avgRating, cuisines, cloudinaryImageId } = resData?.info;
-  const { slaString } = resData?.info.sla;
+  const { slaString } = resData?.info?.sla;
   return (
     <div className="res-card">
       <div className="res-logo">
