@@ -2,13 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Toggle from "./Toggle";
+import useLocalStorage from "use-local-storage";
 
 const Header = () => {
+  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
   const [loginBtn, setLoginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
     <div>
-      <div className="header">
+      <div className="header" data-theme={isDark ? "dark" : "light"}>
         <div className="logo-container">
           <img src={logo} />
         </div>
@@ -27,7 +31,9 @@ const Header = () => {
             <li>
               <Link to="/grocery">Grocery</Link>
             </li>
-            <li>Cart</li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
             <button
               className="login-btn"
               onClick={() => {
@@ -39,6 +45,7 @@ const Header = () => {
               {loginBtn}
             </button>
           </ul>
+          <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
         </div>
       </div>
     </div>

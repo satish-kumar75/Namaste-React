@@ -2,9 +2,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
 :root {
-  --primary: hsl(36, 98%, 51%);
-  --secondary: hsl(40, 67%, 28%);
-  --darkPrimary: hsl(36, 91%, 49%);
+  --primary: hsl(27, 97%, 58%);
+  --secondary: hsl(27, 97%, 45%);
+  --darkPrimary: hsl(27, 97%, 53%);
+}
+
+:root {
+  --background-color: #ffffff;
+  --shimmer-background-primary: #f6f6f6;
+  --shimmer-background-secondary: #f0f0f0;
+  --foreground-color: hsl(27, 97%, 58%);
+  --primary-text-color: #0a0a0a;
+  --secondary-text-color: #ffffff;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
+}
+
+[data-theme="dark"] {
+  --shimmer-background-primary: #7c7c7c;
+  --shimmer-background-secondary: #c9c7c78b;
+  --background-color: #0a0a0a;
+  --foreground-color: hsl(27, 97%, 58%);
+  --primary-text-color: #f6f6f6;
+  --secondary-text-color: #0a0a0a;
+  --toggle-bg: #283452;
+  --toggle-fg: #00a6ff;
 }
 
 * {
@@ -19,7 +41,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  border: 1px solid #eaedf3;
+  border-bottom: 0.5px solid var(--primary-text-color);
+  background-color: var(--background-color);
   box-shadow: 3px 3px 20px #eaedf3;
 
   .logo-container {
@@ -36,6 +59,7 @@
       display: flex;
       align-items: center;
       list-style-type: none;
+      margin-right: 3rem;
 
       li {
         margin-left: 20px;
@@ -44,19 +68,19 @@
 
         a {
           text-decoration: none;
-          color: #000000;
+          color: var(--primary-text-color);
 
           &:hover {
-            color: var(--primary);
+            color: var(--foreground-color);
 
           }
         }
       }
 
       .login-btn {
-        background-color: var(--primary);
+        background-color: var(--foreground-color);
         border: 1px solid var(--secondary);
-        color: #fff;
+        color: var(--secondary-text-color);
         font-weight: 500;
         margin-left: 20px;
         padding: 5px 0;
@@ -74,6 +98,10 @@
 
 }
 
+.body {
+  background-color: var(--background-color);
+}
+
 .res-container {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +111,7 @@
   a {
     list-style: none;
     text-decoration: none;
-    color: #000;
+    color: var(--primary-text-color);
 
     .res-card {
       border-radius: 4px;
@@ -126,7 +154,7 @@
         span {
           height: 5px;
           width: 5px;
-          background-color: #000000;
+          background-color: var(--primary-text-color);
           border-radius: 50%;
         }
 
@@ -148,9 +176,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 60px 50px;
+  padding: 60px 50px;
+  background-color: var(--background-color);
 
   .shimmer-cards {
+
+    .shimmer {
+      background: linear-gradient(to right, var(--shimmer-background-primary) 8%, var(--shimmer-background-secondary) 18%, var(--shimmer-background-primary) 33%);
+      background-size: 1000px 100%;
+      animation: shimmer 2.2s linear infinite forwards;
+    }
+
     .shimmer-title {
       width: 15rem;
     }
