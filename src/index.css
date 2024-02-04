@@ -2,31 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
 :root {
-  --primary: hsl(27, 97%, 58%);
-  --secondary: hsl(27, 97%, 45%);
-  --darkPrimary: hsl(27, 97%, 53%);
+  --shimmer-background-primary: #7c7c7c;
+  --shimmer-background-secondary: #c9c7c78b;
+  --background-color: #15161c;
+  --foreground-color: hsl(27, 97%, 58%);
+  --primary-text-color: #d8d9d9;
+  --secondary-text-color: #0a0a0a;
+  --border-bottom: #eaedf349;
+  --toggle-bg: #283452;
+  --toggle-fg: #00a6ff;
 }
 
-:root {
+[data-theme="dark"] {
+
   --background-color: #ffffff;
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --foreground-color: hsl(27, 97%, 58%);
-  --primary-text-color: #0a0a0a;
+  --primary-text-color: #0d0d0d;
   --secondary-text-color: #ffffff;
+  --border-bottom: #eaedf3;
   --toggle-bg: #f0eb9d;
   --toggle-fg: #ffd000;
-}
-
-[data-theme="dark"] {
-  --shimmer-background-primary: #7c7c7c;
-  --shimmer-background-secondary: #c9c7c78b;
-  --background-color: #0a0a0a;
-  --foreground-color: hsl(27, 97%, 58%);
-  --primary-text-color: #f6f6f6;
-  --secondary-text-color: #0a0a0a;
-  --toggle-bg: #283452;
-  --toggle-fg: #00a6ff;
+  --secondary: hsl(27, 97%, 45%);
+  --darkPrimary: hsl(27, 97%, 53%);
 }
 
 * {
@@ -41,7 +40,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  border-bottom: 0.5px solid var(--primary-text-color);
+  border-bottom: 0.5px solid var(--border-bottom);
   background-color: var(--background-color);
   box-shadow: 3px 3px 20px #eaedf3;
 
@@ -75,6 +74,10 @@
 
           }
         }
+
+        .active {
+          color: var(--foreground-color);
+        }
       }
 
       .login-btn {
@@ -100,6 +103,7 @@
 
 .body {
   background-color: var(--background-color);
+  padding: 20px 0;
 }
 
 .res-container {
@@ -115,7 +119,7 @@
 
     .res-card {
       border-radius: 4px;
-      height: 350px;
+      height: 325px;
       width: 270px;
       padding: 10px;
       transition: all 0.3s;
@@ -190,5 +194,42 @@
     .shimmer-title {
       width: 15rem;
     }
+  }
+}
+
+.about-container {
+  background-color: var(--background-color);
+
+  h1 {
+    color: var(--primary-text-color);
+  }
+
+  .user-info-container {
+
+    p,
+    h2,
+    li {
+      color: var(--primary-text-color);
+
+    }
+  }
+}
+
+.grocery-container {
+  background-color: var(--background-color);
+
+  h2 {
+    color: var(--primary-text-color);
+
+  }
+
+}
+
+.contact-contaienr {
+  background-color: var(--background-color);
+
+  h1 {
+    color: var(--primary-text-color);
+
   }
 }

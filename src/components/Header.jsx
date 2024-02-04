@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Toggle from "./Toggle";
@@ -20,19 +20,20 @@ const Header = () => {
           <ul>
             <li>{onlineStatus ? "🟢" : "🔴"}</li>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            
+            <li>
+              <NavLink to="/about">About Us</NavLink>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
+              <NavLink to="/contact">Contact Us</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <NavLink to="/grocery">Grocery</NavLink>
             </li>
             <li>
-              <Link to="/grocery">Grocery</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
+              <NavLink to="/cart">Cart</NavLink>
             </li>
             <button
               className="login-btn"

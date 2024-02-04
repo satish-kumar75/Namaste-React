@@ -1,104 +1,116 @@
-.menu-container {
-  width: 770px;
-  margin: 0 auto;
-  padding: 20px 15px;
-  .res-detail {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dashed #8d8e90;
-    .res-name {
-      h1 {
-        font-size: 20px;
-        font-weight: 500;
-      }
-      p,
-      span {
-        font-size: 13px;
-        color: #757678;
-      }
-    }
-    .res-rating {
-      height: 80px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #eaedf3;
-      p:nth-child(1) {
-        font-weight: 600;
-        color: green;
-        padding-bottom: 8px;
-        margin-bottom: 8px;
-        border-bottom: 1px solid #eaedf3;
-      }
-      P:nth-child(2) {
-        font-weight: 600;
-        color: #757678;
-        font-size: 8px;
-      }
-    }
-  }
-  .costs {
-    display: flex;
-    gap: 30px;
-    p {
-      font-weight: 600;
-      font-size: 15px;
-    }
-  }
-  .menus {
-    .menu-detail {
+.main-menu-container {
+  background-color: var(--background-color);
+
+  .menu-container {
+    width: 770px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    .res-detail {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
-      padding-bottom: 25px;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eaedf3;
-      .menu-desc {
-        h4 {
-          font-size: 18px;
+      border-bottom: 1px dashed var(--border-bottom);
+      .res-name {
+        h1 {
+          font-size: 20px;
           font-weight: 500;
+          color: var(--primary-text-color);
         }
-        P:nth-child(3) {
-          font-size: 12px;
-          color: #757678;
+        p,
+        span {
+          font-size: 13px;
+          color: var(--primary-text-color);
         }
-        p:nth-child(2) {
-          font-size: 15px;
+      }
+      .res-rating {
+        height: 80px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--border-bottom);
+        p:nth-child(1) {
+          font-weight: 600;
+          color: green;
+          padding-bottom: 8px;
+          margin-bottom: 8px;
+          border-bottom: 1px solid var(--border-bottom);
+        }
+        P:nth-child(2) {
+          font-weight: 600;
+          color: var(--primary-text-color);
+          font-size: 8px;
         }
       }
     }
-    .menu-img {
-      margin-left: 20px;
-      position: relative;
-      .add-btn {
-        position: absolute;
-        background-color: #ffffff;
-        padding: 5px 25px;
-        border: 1px solid #eaedf3;
-        border-radius: 5px;
-        bottom: 10px;
-        left: 15px;
-        p {
-          font-size: 15px;
-          color: rgb(35, 176, 35);
-          font-weight: 500;
-        }
-        p:nth-child(2) {
-          position: absolute;
-          top: -5px;
-          right: 0;
-        }
-      }
-      img {
-        height: 110px;
-        width: 110px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
+    .costs {
+      display: flex;
+      gap: 30px;
       p {
-        font-size: 10px;
-        // margin-left: 23px;
-        text-align: center;
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--primary-text-color);
+      }
+    }
+    .menus {
+      h2 {
+        color: var(--primary-text-color);
+      }
+      .menu-detail {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border-bottom);
+        .menu-desc {
+          h4 {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary-text-color);
+          }
+          P:nth-child(3) {
+            font-size: 12px;
+            color: var(--primary-text-color);
+          }
+          p:nth-child(2) {
+            font-size: 15px;
+            color: var(--primary-text-color);
+          }
+        }
+      }
+      .menu-img {
+        margin-left: 20px;
+        position: relative;
+        .add-btn {
+          position: absolute;
+          background-color: #ffffff;
+          padding: 5px 25px;
+          border: 1px solid var(--border-bottom);
+          border-radius: 5px;
+          bottom: 10px;
+          left: 15px;
+          p {
+            font-size: 15px;
+            color: rgb(35, 176, 35);
+            font-weight: 500;
+          }
+          p:nth-child(2) {
+            position: absolute;
+            top: -5px;
+            right: 0;
+          }
+        }
+        img {
+          height: 110px;
+          width: 110px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+        p {
+          font-size: 10px;
+          // margin-left: 23px;
+          text-align: center;
+          color: var(--primary-text-color);
+        }
       }
     }
   }
