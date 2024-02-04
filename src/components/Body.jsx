@@ -67,7 +67,7 @@ const Body = () => {
           <button onClick={handleSearch}>Search</button>
         </div>
         <button className="filter-btn" onClick={handleFilter}>
-          Filter
+          Filter Restaurant
         </button>
       </div>
       <div className="res-container">

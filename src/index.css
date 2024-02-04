@@ -2,20 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
 :root {
-  --shimmer-background-primary: #7c7c7c;
-  --shimmer-background-secondary: #c9c7c78b;
-  --background-color: #15161c;
-  --foreground-color: hsl(27, 97%, 58%);
-  --primary-text-color: #d8d9d9;
-  --secondary-text-color: #0a0a0a;
-  --border-bottom: #eaedf349;
-  --toggle-bg: #283452;
-  --toggle-fg: #00a6ff;
-}
-
-[data-theme="dark"] {
-
   --background-color: #ffffff;
+  --header-background: #ffffff;
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --foreground-color: hsl(27, 97%, 58%);
@@ -26,6 +14,19 @@
   --toggle-fg: #ffd000;
   --secondary: hsl(27, 97%, 45%);
   --darkPrimary: hsl(27, 97%, 53%);
+}
+
+[data-theme="dark"] {
+  --header-background: #020D19;
+  --shimmer-background-primary: #7c7c7c;
+  --shimmer-background-secondary: #c9c7c78b;
+  --background-color: #15161c;
+  --foreground-color: hsl(27, 97%, 58%);
+  --primary-text-color: #d8d9d9;
+  --secondary-text-color: #0a0a0a;
+  --border-bottom: #eaedf349;
+  --toggle-bg: #283452;
+  --toggle-fg: #00a6ff;
 }
 
 * {
@@ -41,7 +42,7 @@
   align-items: center;
   padding: 0.5rem 2rem;
   border-bottom: 0.5px solid var(--border-bottom);
-  background-color: var(--background-color);
+  background-color: var(--header-background);
   box-shadow: 3px 3px 20px #eaedf3;
 
   .logo-container {
@@ -104,6 +105,57 @@
 .body {
   background-color: var(--background-color);
   padding: 20px 0;
+
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    .search {
+      display: flex;
+      gap: 15px;
+
+      button {
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-weight: 500;
+        border: 1px solid var(--border-bottom);
+        color: var(--secondary-text-color);
+        background-color: var(--foreground-color);
+
+        &:hover {
+          background-color: var(--darkPrimary);
+
+        }
+      }
+
+      .search-box {
+        width: 300px;
+        border-radius: 8px;
+        padding: 6px;
+        outline: none;
+        border: 1px solid var(--border-bottom);
+
+      }
+    }
+
+    .filter-btn {
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: 500;
+      border: 1px solid var(--border-bottom);
+      color: var(--secondary-text-color);
+      background-color: var(--foreground-color);
+
+      &:hover {
+        background-color: var(--darkPrimary);
+
+      }
+    }
+  }
 }
 
 .res-container {
