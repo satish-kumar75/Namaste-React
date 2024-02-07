@@ -1,8 +1,7 @@
 {
-  "rewrites": [
-    {
-      "source": "/dapi",
-      "destination": "https://www.swiggy.com"
+  "server": {
+    "proxy": {
+      "/dapi": "https://www.swiggy.com"
     }
-  ]
+  }
 }
