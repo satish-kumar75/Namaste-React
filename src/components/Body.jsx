@@ -26,6 +26,7 @@ const Body = () => {
           ?.restaurants;
       setListOfResturant(restaurants);
       setFilteredResturant(restaurants);
+      console.log(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

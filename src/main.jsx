@@ -8,7 +8,7 @@ import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
-import "./index.css";
+import "./index.scss";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
