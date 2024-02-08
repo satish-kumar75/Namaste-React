@@ -13,6 +13,8 @@ const Body = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark] = useLocalStorage("isDark", preference);
 
+
+  
   useEffect(() => {
     fetchData();
   }, []);
