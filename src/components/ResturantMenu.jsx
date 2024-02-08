@@ -21,15 +21,30 @@ const ResturantMenu = () => {
     costForTwoMessage,
     locality,
     totalRatingsString,
-  } = resInfo?.cards[0]?.card?.card?.info;
+  } = resInfo?.data?.cards[0]?.card?.card?.info;
 
   const { slaString, lastMileTravelString } =
-    resInfo?.cards?.[0]?.card?.card?.info?.sla;
+    resInfo?.data?.cards?.[0]?.card?.card?.info?.sla;
 
-  const { itemCards, title } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card || {};
-  console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
+  let itemCards = [];
+  let title = "";
+  const nestedCategory =
+    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
+      ?.card;
+  if (nestedCategory) {
+    title = nestedCategory.title;
+    itemCards = nestedCategory.categories
+      ? nestedCategory.categories[0].itemCards
+      : [];
+  } else {
+    const itemCategory =
+      resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
+        ?.card?.card?.categories?.[0];
+    if (itemCategory) {
+      title = itemCategory.title;
+      itemCards = itemCategory.itemCards;
+    }
+  }
 
   return (
     <div className="main-menu-container" data-theme={isDark ? "dark" : "light"}>
@@ -83,32 +98,6 @@ const ResturantMenu = () => {
               </div>
             ))}
           </div>
-          {/* <div className="combo-menu">
-          <h2>Combo ({itemCards.length})</h2>
-          {itemCards.map((item) => (
-            <div className="menu-detail" key={item.id}>
-              <div className="menu-desc">
-                <h4>{item.card.info.name}</h4>
-                <p>₹{item.card.info.price / 100}</p>
-                <p>{item.card.info.description}</p>
-              </div>
-              <div className="menu-img">
-                <div className="add-btn">
-                  <p>Add</p>
-                  <p>+</p>
-                </div>
-                <img
-                  src={
-                    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                    item.card.info.imageId
-                  }
-                  alt=""
-                />
-                <p>customizable</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
         </div>
       </div>
     </div>

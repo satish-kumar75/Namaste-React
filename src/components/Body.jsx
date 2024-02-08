@@ -13,8 +13,6 @@ const Body = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark] = useLocalStorage("isDark", preference);
 
-
-  
   useEffect(() => {
     fetchData();
   }, []);
@@ -24,7 +22,7 @@ const Body = () => {
       const data = await fetch(RES_API);
       const json = await data.json();
       const restaurants =
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       setListOfResturant(restaurants);
       setFilteredResturant(restaurants);

@@ -2,12 +2,17 @@ import { CDN_URL } from "../utils/contants";
 import star from "../assets/star.svg";
 
 const ResturantCard = ({ resData }) => {
-  const { name, avgRating, cuisines, cloudinaryImageId } = resData?.info;
+  const { name, avgRating, cuisines, cloudinaryImageId, locality } =
+    resData?.info;
   const { slaString } = resData?.info?.sla;
+  const { header, subHeader } = resData?.info?.aggregatedDiscountInfoV3 || {};
+  const discountInfo = header && subHeader ? `${header} ${subHeader}` : "";
+
   return (
     <div className="res-card">
       <div className="res-logo">
         <img src={CDN_URL + cloudinaryImageId} />
+        <p>{discountInfo}</p>
       </div>
       <h3>{name}</h3>
       <div className="rating">
@@ -16,7 +21,8 @@ const ResturantCard = ({ resData }) => {
         <span></span>
         <h4>{slaString}</h4>
       </div>
-      <h4>{cuisines.join(", ")}</h4>
+      <p>{cuisines.join(", ")}</p>
+      <p>{locality}</p>
     </div>
   );
 };

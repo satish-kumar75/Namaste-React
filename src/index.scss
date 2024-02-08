@@ -10,6 +10,7 @@
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --foreground-color: hsl(27, 97%, 58%);
+  --paragraph-color: rgba(2, 6, 12, 0.6);
   --primary-text-color: #0d0d0d;
   --secondary-text-color: #ffffff;
   --border-bottom: #eaedf3;
@@ -23,6 +24,7 @@
   --header-background: #020d19;
   --shimmer-background-primary: #7c7c7c;
   --shimmer-background-secondary: #c9c7c78b;
+  --paragraph-color: rgba(255, 255, 255, 0.756);
   --background-color: #15161c;
   --foreground-color: hsl(27, 97%, 58%);
   --primary-text-color: #d8d9d9;
@@ -181,6 +183,30 @@
       }
 
       .res-logo {
+        margin-bottom: 1rem;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 30%;
+          background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          border-radius: 0 0 10px 10px;
+        }
+        p {
+          z-index: 1;
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          font-weight: 800;
+          font-size: 20px;
+        }
         img {
           border-radius: 10px;
           height: 170px;
@@ -192,11 +218,21 @@
       h3 {
         font-size: 18px;
         font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
-      h4:nth-child(4) {
+      P:nth-child(4),
+      p:nth-child(5) {
+        color: var(--paragraph-color);
         font-size: 16px;
         font-weight: 200;
+        line-height: 19px;
+        margin-top: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .rating {
