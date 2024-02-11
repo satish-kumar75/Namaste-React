@@ -1,12 +1,16 @@
-const ItemList = () => {
+import { CDN_URL } from "../utils/contants";
+
+/* eslint-disable react/prop-types */
+const ItemList = ({ items }) => {
+  const handleImageError = (event) => {
+    event.target.src =
+      "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/12/23/Pictures/_ae26fc2c-4520-11eb-bcf5-ed790659da7b.jpg";
+  };
   return (
     <div>
       <div className="menus">
         <div className="recommended-menu">
-          <h2>
-            {title} ({itemCards.length})
-          </h2>
-          {itemCards.map((item) => (
+          {items.map((item) => (
             <div className="menu-detail" key={item.card.info.id}>
               <div className="menu-desc">
                 <h4>{item.card.info.name}</h4>
@@ -22,13 +26,14 @@ const ItemList = () => {
                   <p>Add</p>
                   <p>+</p>
                 </div>
-                <img
-                  src={
-                    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                    item.card.info.imageId
-                  }
-                  alt=""
-                />
+                <div className="item-img">
+                  <img
+                    loading="lazy"
+                    src={CDN_URL + item.card.info.imageId}
+                    alt=""
+                    onError={handleImageError}
+                  />
+                </div>
                 <p>customizable</p>
               </div>
             </div>
@@ -38,3 +43,5 @@ const ItemList = () => {
     </div>
   );
 };
+
+export default ItemList;

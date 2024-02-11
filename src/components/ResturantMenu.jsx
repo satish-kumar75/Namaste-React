@@ -7,6 +7,9 @@ import useLocalStorage from "use-local-storage";
 import star from "../assets/star.svg";
 import yellowstar from "../assets/yellowstar.svg";
 import RestaurantCategory from "./RestaurantCategory";
+import rupee from "../assets/rupee.svg";
+import time from "../assets/time.svg";
+import { CDN_URL } from "../utils/contants";
 
 const ResturantMenu = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -24,48 +27,35 @@ const ResturantMenu = () => {
     costForTwoMessage,
     locality,
     totalRatingsString,
+    cloudinaryImageId,
   } = resInfo?.data?.cards[0]?.card?.card?.info;
 
   const { slaString, lastMileTravelString } =
     resInfo?.data?.cards?.[0]?.card?.card?.info?.sla;
 
-  let itemCards = [];
-  let title = "";
-  const nestedCategory =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
-  if (nestedCategory) {
-    title = nestedCategory.title;
-    itemCards = nestedCategory.categories
-      ? nestedCategory.categories[0].itemCards
-      : [];
-  } else {
-    const itemCategory =
-      resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-        ?.card?.card?.categories?.[0];
-    if (itemCategory) {
-      title = itemCategory.title;
-      itemCards = itemCategory.itemCards;
-    }
-  }
-
-  const category =
+  const categories =
     resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log(category);
-
+  console.log(resInfo?.data?.cards[0]?.card?.card?.info);
   return (
     <div className="main-menu-container" data-theme={isDark ? "dark" : "light"}>
       <div className="menu-container">
         <div className="res-detail">
-          <div className="res-name">
-            <h1>{name}</h1>
-            <p>{cuisines.join(", ")}</p>
-            <span>{locality}</span>
-            <span>,{lastMileTravelString}</span>
+          <div className="res-name flex gap-5">
+            <img
+              className="h-[120px] w-[120px] object-cover rounded-lg"
+              src={CDN_URL + cloudinaryImageId}
+              alt=""
+            />
+            <div className="mt-5">
+              <h1>{name}</h1>
+              <p>{cuisines.join(", ")}</p>
+              <span>{locality}</span>
+              <span>, {lastMileTravelString}</span>
+            </div>
           </div>
           <div className="res-rating">
             <div className="star-rating">
@@ -82,11 +72,17 @@ const ResturantMenu = () => {
           </div>
         </div>
         <div className="costs">
-          <p>{slaString}</p>
-          <p>{costForTwoMessage}</p>
+          <p>
+            {" "}
+            <img src={time} alt="" /> {slaString}
+          </p>
+          <p>
+            {" "}
+            <img src={rupee} alt="" /> {costForTwoMessage}
+          </p>
         </div>
-        {category.map((c, index) => (
-          <RestaurantCategory key={index} />
+        {categories.map((category, index) => (
+          <RestaurantCategory key={index} data={category?.card?.card} />
         ))}
       </div>
     </div>

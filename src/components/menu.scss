@@ -52,6 +52,8 @@
       display: flex;
       gap: 30px;
       p {
+        display: flex;
+        gap: 10px;
         font-weight: 600;
         font-size: 15px;
         color: var(--primary-text-color);
@@ -105,12 +107,19 @@
             right: 0;
           }
         }
-        img {
+        .item-img {
           height: 110px;
           width: 110px;
-          object-fit: cover;
-          border-radius: 8px;
+          overflow: hidden;
+          border-radius: 10px;
+          img {
+            height: 110px;
+            width: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
         }
+
         p {
           font-size: 10px;
           // margin-left: 23px;
@@ -120,4 +129,11 @@
       }
     }
   }
+}
+
+.svg-toggle {
+  stroke: var(--primary-text-color);
+}
+.menu-title {
+  color: var(--primary-text-color);
 }
