@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { topRated } from "./ResturantCard";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { RES_API } from "../utils/contants";
@@ -12,6 +12,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark] = useLocalStorage("isDark", preference);
+
+  const TopRatedResturant = topRated(ResturantCard);
 
   useEffect(() => {
     fetchData();
@@ -74,7 +76,11 @@ const Body = () => {
       <div className="res-container">
         {filteredResturant.map((restaurant) => (
           <Link key={restaurant.info.id} to={`resturant/${restaurant.info.id}`}>
-            <ResturantCard resData={restaurant} />
+            {restaurant.info.avgRatingString >= 4 ? (
+              <TopRatedResturant resData={restaurant} />
+            ) : (
+              <ResturantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

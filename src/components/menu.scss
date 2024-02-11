@@ -28,14 +28,20 @@
         padding: 10px;
         border-radius: 10px;
         border: 1px solid var(--border-bottom);
-        p:nth-child(1) {
-          font-weight: 600;
-          color: green;
+        .star-rating {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
           padding-bottom: 8px;
           margin-bottom: 8px;
           border-bottom: 1px solid var(--border-bottom);
+          p {
+            display: inline;
+            font-weight: 600;
+          }
         }
-        P:nth-child(2) {
+        > P:nth-child(2) {
           font-weight: 600;
           color: var(--primary-text-color);
           font-size: 8px;

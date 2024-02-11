@@ -1,5 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unsafe-optional-chaining */
+/* eslint-disable react/display-name */
 import { CDN_URL } from "../utils/contants";
 import star from "../assets/star.svg";
+import yellowstar from "../assets/yellowstar.svg";
 
 const ResturantCard = ({ resData }) => {
   const { name, avgRating, cuisines, cloudinaryImageId, locality } =
@@ -11,12 +15,16 @@ const ResturantCard = ({ resData }) => {
   return (
     <div className="res-card">
       <div className="res-logo">
-        <img src={CDN_URL + cloudinaryImageId} />
+        <img loading="lazy" src={CDN_URL + cloudinaryImageId} />
         <p>{discountInfo}</p>
       </div>
       <h3>{name}</h3>
       <div className="rating">
-        <img src={star} alt="Rating Star" />
+        {avgRating >= 4 ? (
+          <img src={star} alt="Rating Star" />
+        ) : (
+          <img src={yellowstar} alt="Rating Star" />
+        )}
         <h4>{avgRating}</h4>
         <span></span>
         <h4>{slaString}</h4>
@@ -25,6 +33,19 @@ const ResturantCard = ({ resData }) => {
       <p>{locality}</p>
     </div>
   );
+};
+
+export const topRated = (ResturantCard) => {
+  return (props) => {
+    return (
+      <div className="top-rated">
+        <div className="ribbon">
+          <span>Top Rated</span>
+        </div>
+        <ResturantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default ResturantCard;

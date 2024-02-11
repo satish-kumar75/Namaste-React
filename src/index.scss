@@ -10,6 +10,7 @@
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --foreground-color: hsl(27, 97%, 58%);
+  --bage-color: #a19d9d;
   --paragraph-color: rgba(2, 6, 12, 0.6);
   --primary-text-color: #0d0d0d;
   --secondary-text-color: #ffffff;
@@ -25,6 +26,7 @@
   --shimmer-background-primary: #7c7c7c;
   --shimmer-background-secondary: #c9c7c78b;
   --paragraph-color: rgba(255, 255, 255, 0.756);
+  --bage-color: #eae8e8;
   --background-color: #15161c;
   --foreground-color: hsl(27, 97%, 58%);
   --primary-text-color: #d8d9d9;
@@ -199,11 +201,13 @@
           );
           border-radius: 0 0 10px 10px;
         }
+
         p {
+          color: #ffffffdc;
           z-index: 1;
           position: absolute;
           bottom: 0;
-          left: 10%;
+          left: 8%;
           font-weight: 800;
           font-size: 20px;
         }
@@ -260,7 +264,59 @@
     }
   }
 }
-
+.top-rated {
+  position: relative;
+}
+.ribbon {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: #79a70a;
+  background: linear-gradient(#9bc90d 0%, #79a70a 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  right: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #79a70a;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79a70a;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #79a70a;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79a70a;
+}
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
