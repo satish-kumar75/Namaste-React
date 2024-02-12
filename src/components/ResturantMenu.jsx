@@ -1,7 +1,9 @@
 /* eslint-disable no-unsafe-optional-chaining */
+import { useParams } from "react-router-dom";
+import { CDN_URL } from "../utils/contants";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import "./menu.scss";
-import { useParams } from "react-router-dom";
 import useResturantMenu from "../utils/useResturantMenu";
 import useLocalStorage from "use-local-storage";
 import star from "../assets/star.svg";
@@ -9,12 +11,12 @@ import yellowstar from "../assets/yellowstar.svg";
 import RestaurantCategory from "./RestaurantCategory";
 import rupee from "../assets/rupee.svg";
 import time from "../assets/time.svg";
-import { CDN_URL } from "../utils/contants";
 
 const ResturantMenu = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark] = useLocalStorage("isDark", preference);
   const { resId } = useParams();
+  const [showIndex, setShowIndex] = useState(0);
 
   const resInfo = useResturantMenu(resId);
 
@@ -82,7 +84,12 @@ const ResturantMenu = () => {
           </p>
         </div>
         {categories.map((category, index) => (
-          <RestaurantCategory key={index} data={category?.card?.card} />
+          <RestaurantCategory
+            key={index}
+            data={category?.card?.card}
+            showItems={index === showIndex ? true : false}
+            onClick={() => setShowIndex(index === showIndex ? false : index)}
+          />
         ))}
       </div>
     </div>

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
 import ItemList from "./ItemList";
 
 const Icon = ({ open }) => {
@@ -11,7 +10,9 @@ const Icon = ({ open }) => {
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
-      className={`${open ? "rotate-180" : ""} h-5 w-5 transition-transform svg-toggle`}
+      className={`${
+        open ? "rotate-180" : ""
+      } h-5 w-5 transition-transform svg-toggle`}
     >
       <path
         strokeLinecap="round"
@@ -22,28 +23,25 @@ const Icon = ({ open }) => {
   );
 };
 
-const RestaurantCategory = ({ data }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-  console.log(data);
+const RestaurantCategory = ({ data, showItems, onClick }) => {
 
   return (
     <div>
       <div>
-        <div className="flex justify-between mb-4 mt-4 cursor-pointer" onClick={handleClick}>
+        <div
+          className="flex justify-between mb-4 mt-4 cursor-pointer"
+          onClick={onClick}
+        >
           <span className="font-bold menu-title">
             {data.title} ({data.itemCards.length})
           </span>
           <span>
-            <Icon open={open} />
+            <Icon open={showItems} />
           </span>
         </div>
-        {open && <ItemList items={data.itemCards} />}
+        {showItems && <ItemList items={data.itemCards} />}
       </div>
-      <div className="border-b-8"></div>
+      <div className="border-b-8 mb-7"></div>
     </div>
   );
 };
