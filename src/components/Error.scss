@@ -1,6 +1,21 @@
-body {
-    background-color: #141019;
-    background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
+.error-container {
+    // background-color: #403725;
+    // background: radial-gradient(at 50% -20%, #6c665e, #472500) fixed;
+    background-color: var(--background-color);
+    height: calc(100vh - 67px);
+
+    .error-P {
+        color: var(--primary-text-color);
+    }
+
+    .return-btn {
+        background-color: var(--primary-text-color);
+        color: var(--background-color);
+
+        &:hover {
+            background-color: var(--paragraph-color);
+        }
+    }
 }
 
 #handboy {
