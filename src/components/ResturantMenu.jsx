@@ -13,8 +13,7 @@ import rupee from "../assets/rupee.svg";
 import time from "../assets/time.svg";
 
 const ResturantMenu = () => {
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [isDark] = useLocalStorage("isDark", preference);
+  const [isDark] = useLocalStorage("isDark");
   const { resId } = useParams();
   const [showIndex, setShowIndex] = useState(0);
 

@@ -1,8 +1,7 @@
 import useLocalStorage from "use-local-storage";
 import UserClass from "./UserClass";
 const About = () => {
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [isDark] = useLocalStorage("isDark", preference);
+  const [isDark] = useLocalStorage("isDark");
   return (
     <div className="about-container" data-theme={isDark ? "dark" : "light"}>
       <h1>This is about us page</h1>

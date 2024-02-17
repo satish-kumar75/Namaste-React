@@ -14,15 +14,17 @@ const Header = () => {
     <div>
       <div className="header" data-theme={isDark ? "dark" : "light"}>
         <div className="logo-container">
-          <img src={logo} />
+          <NavLink to="/">
+            <img src={logo} />
+          </NavLink>
         </div>
         <div className="nav-item">
           <ul>
-            <li>{onlineStatus ? "🟢" : "🔴"}</li>
+            <li style={{ color: onlineStatus ? "#00D26A" : "red" }}>●</li>
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
-            
+
             <li>
               <NavLink to="/about">About Us</NavLink>
             </li>

@@ -35,6 +35,8 @@ const ResturantCard = ({ resData }) => {
   );
 };
 
+// Higher-Order Component (HOC) - A Higher-Order Component (HOC) is a function that takes a component and returns a new component with enhanced functionality.
+
 export const topRated = (ResturantCard) => {
   return (props) => {
     return (
