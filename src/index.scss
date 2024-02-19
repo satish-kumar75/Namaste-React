@@ -187,6 +187,7 @@
       .res-logo {
         margin-bottom: 1rem;
         position: relative;
+
         &::after {
           content: "";
           position: absolute;
@@ -194,11 +195,9 @@
           left: 0;
           width: 100%;
           height: 30%;
-          background-image: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.8) 0%,
-            rgba(0, 0, 0, 0) 100%
-          );
+          background-image: linear-gradient(to top,
+              rgba(0, 0, 0, 0.8) 0%,
+              rgba(0, 0, 0, 0) 100%);
           border-radius: 0 0 10px 10px;
         }
 
@@ -211,6 +210,7 @@
           font-weight: 800;
           font-size: 20px;
         }
+
         img {
           border-radius: 10px;
           height: 170px;
@@ -264,9 +264,11 @@
     }
   }
 }
+
 .top-rated {
   position: relative;
 }
+
 .ribbon {
   position: absolute;
   right: -5px;
@@ -277,6 +279,7 @@
   height: 75px;
   text-align: right;
 }
+
 .ribbon span {
   font-size: 10px;
   font-weight: bold;
@@ -295,6 +298,7 @@
   top: 19px;
   right: -21px;
 }
+
 .ribbon span::before {
   content: "";
   position: absolute;
@@ -306,6 +310,7 @@
   border-bottom: 3px solid transparent;
   border-top: 3px solid #79a70a;
 }
+
 .ribbon span::after {
   content: "";
   position: absolute;
@@ -317,6 +322,7 @@
   border-bottom: 3px solid transparent;
   border-top: 3px solid #79a70a;
 }
+
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
@@ -326,12 +332,10 @@
 
   .shimmer-cards {
     .shimmer {
-      background: linear-gradient(
-        to right,
-        var(--shimmer-background-primary) 8%,
-        var(--shimmer-background-secondary) 18%,
-        var(--shimmer-background-primary) 33%
-      );
+      background: linear-gradient(to right,
+          var(--shimmer-background-primary) 8%,
+          var(--shimmer-background-secondary) 18%,
+          var(--shimmer-background-primary) 33%);
       background-size: 1000px 100%;
       animation: shimmer 2.2s linear infinite forwards;
     }
@@ -350,6 +354,7 @@
   }
 
   .user-info-container {
+
     p,
     h2,
     li {

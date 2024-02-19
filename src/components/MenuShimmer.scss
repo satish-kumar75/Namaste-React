@@ -1,0 +1,61 @@
+$background: linear-gradient(to right,
+        var(--shimmer-background-primary) 8%,
+        var(--shimmer-background-secondary) 18%,
+        var(--shimmer-background-primary) 33%);
+$size: 1000px 100%;
+$animation: shimmer 2.2s linear infinite forwards;
+
+.shimmer {
+    background: $background;
+    background-size: $size;
+    animation: $animation;
+}
+
+.menu-container {
+    .res-detail {
+        .restaurant-name {
+            border: none;
+
+            div:nth-child(1) {
+                border-radius: 10px;
+                @extend .shimmer;
+            }
+
+            div:nth-child(2) {
+
+                h1,
+                p,
+                span {
+                    @extend .shimmer;
+                }
+            }
+        }
+
+        .restaurant-rating {
+            @extend .shimmer;
+        }
+    }
+
+    .restaurant-costs {
+        p {
+            @extend .shimmer;
+        }
+    }
+
+    .restaurant-category {
+        @extend .shimmer;
+    }
+
+    .category-details {
+        border-bottom: 1px solid var(--border-bottom);
+
+        h1,
+        p {
+            @extend .shimmer;
+        }
+
+        .dish-img {
+            @extend .shimmer;
+        }
+    }
+}

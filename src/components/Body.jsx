@@ -56,7 +56,10 @@ const Body = () => {
   return listOfResturant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body" data-theme={isDark ? "dark" : "light"}>
+    <div
+      className="body min-h-[calc(100svh-67px)]"
+      data-theme={isDark ? "dark" : "light"}
+    >
       <div className="filter">
         <div className="search">
           <input

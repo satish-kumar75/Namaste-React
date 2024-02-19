@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import { CDN_URL } from "../utils/contants";
 import { useState } from "react";
-import Shimmer from "./Shimmer";
+import MenuShimmer from "./MenuShimmer";
 import "./menu.scss";
 import useResturantMenu from "../utils/useResturantMenu";
 import useLocalStorage from "use-local-storage";
@@ -19,7 +19,7 @@ const ResturantMenu = () => {
 
   const resInfo = useResturantMenu(resId);
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <MenuShimmer />;
 
   const {
     name,

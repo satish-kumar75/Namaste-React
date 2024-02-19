@@ -2,32 +2,37 @@
   background-color: var(--background-color);
 
   .menu-container {
-    width: 770px;
+    max-width: 770px;
     margin: 0 auto;
     padding: 20px 15px;
+
     .res-detail {
       padding-bottom: 15px;
       margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
       border-bottom: 1px dashed var(--border-bottom);
+
       .res-name {
         h1 {
           font-size: 20px;
           font-weight: 500;
           color: var(--primary-text-color);
         }
+
         p,
         span {
           font-size: 13px;
           color: var(--primary-text-color);
         }
       }
+
       .res-rating {
         height: 80px;
         padding: 10px;
         border-radius: 10px;
         border: 1px solid var(--border-bottom);
+
         .star-rating {
           display: flex;
           align-items: center;
@@ -36,21 +41,25 @@
           padding-bottom: 8px;
           margin-bottom: 8px;
           border-bottom: 1px solid var(--border-bottom);
+
           p {
             display: inline;
             font-weight: 600;
           }
         }
-        > P:nth-child(2) {
+
+        >P:nth-child(2) {
           font-weight: 600;
           color: var(--primary-text-color);
           font-size: 8px;
         }
       }
     }
+
     .costs {
       display: flex;
       gap: 30px;
+
       p {
         display: flex;
         gap: 10px;
@@ -59,35 +68,42 @@
         color: var(--primary-text-color);
       }
     }
+
     .menus {
       h2 {
         color: var(--primary-text-color);
       }
+
       .menu-detail {
         display: flex;
         justify-content: space-between;
         padding-bottom: 25px;
         margin-bottom: 15px;
         border-bottom: 1px solid var(--border-bottom);
+
         .menu-desc {
           h4 {
             font-size: 18px;
             font-weight: 500;
             color: var(--primary-text-color);
           }
+
           P:nth-child(3) {
             font-size: 12px;
             color: var(--primary-text-color);
           }
+
           p:nth-child(2) {
             font-size: 15px;
             color: var(--primary-text-color);
           }
         }
       }
+
       .menu-img {
         margin-left: 20px;
         position: relative;
+
         .add-btn {
           position: absolute;
           background-color: #ffffff;
@@ -96,22 +112,26 @@
           border-radius: 5px;
           bottom: 10px;
           left: 15px;
+
           p {
             font-size: 15px;
             color: rgb(35, 176, 35);
             font-weight: 500;
           }
+
           p:nth-child(2) {
             position: absolute;
             top: -5px;
             right: 0;
           }
         }
+
         .item-img {
           height: 110px;
           width: 110px;
           overflow: hidden;
           border-radius: 10px;
+
           img {
             height: 110px;
             width: 110px;
@@ -134,6 +154,7 @@
 .svg-toggle {
   stroke: var(--primary-text-color);
 }
+
 .menu-title {
   color: var(--primary-text-color);
 }

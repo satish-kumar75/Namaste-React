@@ -1,0 +1,68 @@
+.user-info-container {
+    max-width: 1200px;
+    grid-template-columns: 290px 1fr;
+
+    .edit-btn-G {
+        background-color: var(--border-bottom);
+        color: var(--primary-text-color);
+    }
+
+    .G-user-details {
+        border: 1px solid var(--border-bottom);
+    }
+
+    div {
+        p:nth-child(3) {
+            color: #a19d9d;
+        }
+    }
+
+    a {
+        color: var(--primary-text-color);
+    }
+
+    .repo {
+        background-color: #171754;
+        border-radius: 5px;
+        display: inline-block;
+        color: white !important;
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .repo::before {
+        content: "";
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(34, 20, 45, 0.725), rgba(7, 24, 125, 0.73));
+        box-shadow:
+            inset 7px 1em 3em rgba(4, 5, 4, 0.7),
+            inset -6px 2em 4em rgba(20, 28, 226, 0.88),
+            4px 4px 10px rgba(0, 0, 0, 0.3);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        z-index: -1;
+        transition: transform 0.3s;
+    }
+
+    .repo:hover {
+        transform: translateY(-5px);
+        transform: scale(1.1);
+    }
+
+    .repo:hover::before {
+        transform: scaleX(1);
+    }
+
+    .octicon {
+        fill: var(--primary-text-color);
+    }
+}
