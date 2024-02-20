@@ -29,13 +29,12 @@ const ResturantMenu = () => {
     locality,
     totalRatingsString,
     cloudinaryImageId,
-  } = resInfo?.data?.cards[0]?.card?.card?.info;
-
+  } = resInfo?.data?.cards[2]?.card?.card?.info;
   const { slaString, lastMileTravelString } =
-    resInfo?.data?.cards?.[0]?.card?.card?.info?.sla;
+    resInfo?.data?.cards?.[2]?.card?.card?.info?.sla;
 
   const categories =
-    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
