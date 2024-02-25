@@ -6,3 +6,5 @@ export const MENU_URL =
 
 export const RES_API =
   "https://food-wagon-backend.onrender.com/api/restaurants?lat=25.61011402528211&lng=85.116419903934";
+
+export const ERROR_IMG = "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/12/23/Pictures/_ae26fc2c-4520-11eb-bcf5-ed790659da7b.jpg";

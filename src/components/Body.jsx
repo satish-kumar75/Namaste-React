@@ -53,9 +53,7 @@ const Body = () => {
       <h2>No Internet Connection, Please! check your internet connection</h2>
     );
 
-  return listOfResturant.length === 0 ? (
-    <Shimmer />
-  ) : (
+  return (
     <div
       className="body min-h-[calc(100svh-67px)]"
       data-theme={isDark ? "dark" : "light"}
@@ -74,17 +72,24 @@ const Body = () => {
           Filter Restaurant
         </button>
       </div>
-      <div className="res-container">
-        {filteredResturant.map((restaurant) => (
-          <Link key={restaurant.info.id} to={`resturant/${restaurant.info.id}`}>
-            {restaurant.info.avgRatingString >= 4 ? (
-              <TopRatedResturant resData={restaurant} />
-            ) : (
-              <ResturantCard resData={restaurant} />
-            )}
-          </Link>
-        ))}
-      </div>
+      {listOfResturant.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div className="res-container">
+          {filteredResturant.map((restaurant) => (
+            <Link
+              key={restaurant.info.id}
+              to={`resturant/${restaurant.info.id}`}
+            >
+              {restaurant.info.avgRatingString >= 4 ? (
+                <TopRatedResturant resData={restaurant} />
+              ) : (
+                <ResturantCard resData={restaurant} />
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

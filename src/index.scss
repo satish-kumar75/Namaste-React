@@ -44,13 +44,18 @@
 }
 
 .header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
   border-bottom: 0.5px solid var(--border-bottom);
   background-color: var(--header-background);
-  box-shadow: 3px 3px 20px #eaedf3;
+  box-shadow: 3px 3px 20px var(--border-bottom);
+  z-index: 99;
 
   .logo-container {
     width: 140px;
@@ -107,6 +112,7 @@
 }
 
 .body {
+  margin-top: 65px;
   background-color: var(--background-color);
   padding: 20px 0;
 
@@ -327,7 +333,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 60px 50px;
+  padding: 18px 50px;
   background-color: var(--background-color);
 
   .shimmer-cards {
@@ -347,6 +353,7 @@
 }
 
 .about-container {
+  margin-top: 67px;
   background-color: var(--background-color);
 
   h1 {
@@ -364,6 +371,8 @@
 }
 
 .grocery-container {
+  margin-top: 67px;
+
   background-color: var(--background-color);
 
   h2 {

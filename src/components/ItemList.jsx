@@ -1,10 +1,16 @@
-import { CDN_URL } from "../utils/contants";
+import { useDispatch } from "react-redux";
+import { CDN_URL,ERROR_IMG } from "../utils/contants";
+import { addItems } from "../utils/cartSlice";
 
 /* eslint-disable react/prop-types */
 const ItemList = ({ items }) => {
   const handleImageError = (event) => {
     event.target.src =
-      "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/12/23/Pictures/_ae26fc2c-4520-11eb-bcf5-ed790659da7b.jpg";
+    ERROR_IMG;
+  };
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    dispatch(addItems(item));
   };
   return (
     <div>
@@ -22,7 +28,10 @@ const ItemList = ({ items }) => {
                 <p>{item.card.info.description}</p>
               </div>
               <div className="menu-img">
-                <div className="add-btn">
+                <div
+                  className="add-btn cursor-pointer"
+                  onClick={() => handleAddItem(item)}
+                >
                   <p>Add</p>
                   <p>+</p>
                 </div>

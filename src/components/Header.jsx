@@ -4,12 +4,16 @@ import logo from "../assets/logo.png";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Toggle from "./Toggle";
 import useLocalStorage from "use-local-storage";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
   const [loginBtn, setLoginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  // Subscribing to the store using Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div>
       <div className="header" data-theme={isDark ? "dark" : "light"}>
@@ -35,7 +39,7 @@ const Header = () => {
               <NavLink to="/grocery">Grocery</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">Cart</NavLink>
+              <NavLink to="/cart">Cart {cartItems.length}</NavLink>
             </li>
             <button
               className="login-btn"

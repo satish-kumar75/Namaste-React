@@ -1215,7 +1215,7 @@ const Error = () => {
             </p>
             <NavLink
               to="/"
-              className="return-btn w-40 px-4 py-2 flex my-4 mx-auto rounded-lg cursor-pointer font-medium"
+              className="return-btn w-[160px] px-4 py-2 flex my-4 mx-auto rounded-lg cursor-pointer font-medium"
             >
               Return to Home
             </NavLink>
