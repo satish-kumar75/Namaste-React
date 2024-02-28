@@ -1,6 +1,6 @@
 /* eslint-disable no-unsafe-optional-chaining */
 import { useParams } from "react-router-dom";
-import { CDN_URL } from "../utils/contants";
+import { CDN_URL, MENU_TYPE } from "../utils/contants";
 import { useState } from "react";
 import MenuShimmer from "./MenuShimmer";
 import "./menu.scss";
@@ -35,9 +35,7 @@ const ResturantMenu = () => {
 
   const categories =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) =>
-        c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      (c) => c.card?.card?.["@type"] === MENU_TYPE
     );
   console.log(resInfo?.data?.cards[0]?.card?.card?.info);
   return (
