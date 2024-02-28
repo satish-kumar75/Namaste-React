@@ -1,0 +1,22 @@
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 50px;
+    background-color: var(--background-color);
+  
+    .shimmer-cards {
+      .shimmer {
+        background: linear-gradient(to right,
+            var(--shimmer-background-primary) 8%,
+            var(--shimmer-background-secondary) 18%,
+            var(--shimmer-background-primary) 33%);
+        background-size: 1000px 100%;
+        animation: shimmer 2.2s linear infinite forwards;
+      }
+  
+      .shimmer-title {
+        width: 15rem;
+      }
+    }
+  }

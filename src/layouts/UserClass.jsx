@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserClass.scss";
+import "../styles/UserClass.scss";
 
 class UserClass extends React.Component {
   constructor(props) {

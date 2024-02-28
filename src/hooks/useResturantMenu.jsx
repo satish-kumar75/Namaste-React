@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MENU_URL } from "./contants";
+import { MENU_URL } from "../utils/contants";
 
 const useResturantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);

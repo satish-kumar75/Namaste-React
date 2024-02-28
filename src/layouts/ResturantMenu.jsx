@@ -1,11 +1,11 @@
 /* eslint-disable no-unsafe-optional-chaining */
+import "../styles/RestaurantMenu.scss";
 import { useParams } from "react-router-dom";
 import { CDN_URL, MENU_TYPE } from "../utils/contants";
 import { useState } from "react";
-import MenuShimmer from "./MenuShimmer";
-import "./menu.scss";
-import useResturantMenu from "../utils/useResturantMenu";
 import useLocalStorage from "use-local-storage";
+import MenuShimmer from "../components/Shimmer/MenuShimmer";
+import useResturantMenu from "../hooks/useResturantMenu";
 import star from "../assets/star.svg";
 import yellowstar from "../assets/yellowstar.svg";
 import RestaurantCategory from "./RestaurantCategory";
@@ -29,15 +29,14 @@ const ResturantMenu = () => {
     locality,
     totalRatingsString,
     cloudinaryImageId,
-  } = resInfo?.data?.cards[2]?.card?.card?.info;
+  } = resInfo?.data?.cards[0]?.card?.card?.info;
   const { slaString, lastMileTravelString } =
-    resInfo?.data?.cards?.[2]?.card?.card?.info?.sla;
+    resInfo?.data?.cards?.[0]?.card?.card?.info?.sla;
 
   const categories =
-    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) => c.card?.card?.["@type"] === MENU_TYPE
     );
-  console.log(resInfo?.data?.cards[0]?.card?.card?.info);
   return (
     <div className="main-menu-container" data-theme={isDark ? "dark" : "light"}>
       <div className="menu-container">

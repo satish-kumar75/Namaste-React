@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import useLocalStorage from "use-local-storage";
-import "./Cart.scss";
+import "../styles/Cart.scss";
 
 const Cart = () => {
   const [isDark] = useLocalStorage("isDark");

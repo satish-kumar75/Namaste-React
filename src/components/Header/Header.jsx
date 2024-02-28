@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import Toggle from "./Toggle";
+import "./Header.scss";
+import logo from "../../assets/logo.png";
+import useOnlineStatus from "../../hooks/useOnlineStatus";
+import Toggle from "../BtnToggleTheme/Toggle";
 import useLocalStorage from "use-local-storage";
 import { useSelector } from "react-redux";
 

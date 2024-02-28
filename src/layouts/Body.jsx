@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ResturantCard, { topRated } from "./ResturantCard";
-import Shimmer from "./Shimmer";
-import useOnlineStatus from "../utils/useOnlineStatus";
 import { RES_API } from "../utils/contants";
+import ResturantCard, { topRated } from "./ResturantCard";
+import Shimmer from "../components/Shimmer/Shimmer";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 import useLocalStorage from "use-local-storage";
+import "../styles/Body.scss";
 
 const Body = () => {
   const [listOfResturant, setListOfResturant] = useState([]);
@@ -32,12 +33,18 @@ const Body = () => {
     }
   };
 
-  const handleSearch = () => {
-    const filteredResturant = listOfResturant.filter((res) =>
-      res.info.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredResturant(filteredResturant);
-  };
+  // const handleSearch = (e) => {
+  //   setSearchText(e.target.value);
+
+  //   if (e.target.value.length == "") {
+  //     setFilteredResturant(listOfResturant);
+  //   } else {
+  //     const filteredResturant = listOfResturant.filter((res) =>
+  //       res.info.name.toLowerCase().includes(e.target.value.toLowerCase())
+  //     );
+  //     setFilteredResturant(filteredResturant);
+  //   }
+  // };
 
   const handleFilter = () => {
     const filteredList = listOfResturant.filter(
@@ -63,10 +70,10 @@ const Body = () => {
           <input
             className="search-box"
             type="text"
-            value={searchText}
+            // value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button onClick={handleSearch}>Search</button>
+          {/* <button onClick={handleSearch}>Search</button> */}
         </div>
         <button className="filter-btn" onClick={handleFilter}>
           Filter Restaurant
@@ -76,18 +83,24 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div className="res-container">
-          {filteredResturant.map((restaurant) => (
-            <Link
-              key={restaurant.info.id}
-              to={`resturant/${restaurant.info.id}`}
-            >
-              {restaurant.info.avgRatingString >= 4 ? (
-                <TopRatedResturant resData={restaurant} />
-              ) : (
-                <ResturantCard resData={restaurant} />
-              )}
-            </Link>
-          ))}
+          {filteredResturant
+            .filter((item) => {
+              return searchText.toLowerCase() === ""
+                ? item
+                : item.info.name.toLowerCase().includes(searchText);
+            })
+            .map((restaurant) => (
+              <Link
+                key={restaurant.info.id}
+                to={`resturant/${restaurant.info.id}`}
+              >
+                {restaurant.info.avgRatingString >= 4 ? (
+                  <TopRatedResturant resData={restaurant} />
+                ) : (
+                  <ResturantCard resData={restaurant} />
+                )}
+              </Link>
+            ))}
         </div>
       )}
     </div>
