@@ -40,7 +40,12 @@ const Header = () => {
               <NavLink to="/grocery">Grocery</NavLink>
             </li>
             <li>
-              <NavLink to="/cart">Cart {cartItems.length}</NavLink>
+              <NavLink to="/cart">
+                Cart{" "}
+                <span className="border-2 px-2 pt-1 rounded-t-full rounded-b-sm">
+                  {cartItems.length}
+                </span>
+              </NavLink>
             </li>
             <button
               className="login-btn"
