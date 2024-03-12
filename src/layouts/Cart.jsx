@@ -1,95 +1,93 @@
+// Cart.jsx
 import { useSelector } from "react-redux";
-import ItemList from "./ItemList";
 import useLocalStorage from "use-local-storage";
+import { NavLink } from "react-router-dom";
+import emptyCartImage from "../assets/EmptyCart.svg";
+import deleteItemIcon from "../assets/delete.svg";
+import { CDN_URL } from "../utils/contants";
 import "../styles/Cart.scss";
 
 const Cart = () => {
   const [isDark] = useLocalStorage("isDark");
-
   const cartItems = useSelector((store) => store.cart.items);
-  return (
-    <div
-      className="cart-container mt-[67px] px-24 pt-5"
-      data-theme={isDark ? "dark" : "light"}
-    >
-      <p className="text-center">My Cart</p>
-      {/* <div className="w-6/12 m-auto pt-5">
-        <ItemList items={cartItems} />
-      </div> */}
-      <div className="sub-container flex justify-between">
-        <div className="cart-item border w-[600px] p-6">
-          <div className="flex items-center gap-7 mb-4 border-b-2 pb-4">
-            <img
-              className="h-28 w-28 object-cover rounded-lg"
-              src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/12/23/Pictures/_ae26fc2c-4520-11eb-bcf5-ed790659da7b.jpg"
-              alt=""
-            />
-            <div>
-              <h2>Restaurant Name</h2>
-              <p>Location</p>
-            </div>
-          </div>
-          {[...Array(10)].map((_, index) => (
-            <div key={index} className="flex justify-between mb-3">
-              <div className="flex gap-7 items-center">
+
+  return cartItems.length === 0 ? (
+    <div className="empty-cart" data-theme={isDark ? "dark" : "light"}>
+      <img src={emptyCartImage} alt="empty cart image" />
+      <div className="empty-cart-content">
+        <h3>Your Cart is Empty</h3>
+        <p>Looks like you haven’t added anything to your cart yet.</p>
+        <NavLink to={"/"} className="explore-restaurants-link">
+          Explore Restaurants Near You
+        </NavLink>
+      </div>
+    </div>
+  ) : (
+    <div className="Main-cart-container" data-theme={isDark ? "dark" : "light"}>
+      <div className="cart-container">
+        <h2 className="cart-title">My Cart</h2>
+        <div className="cart-items-container">
+          {cartItems.map((item, index) => (
+            <div className="cart-item" key={index}>
+              <div className="item-info">
                 <img
-                  className="h-28 w-28 object-cover rounded-lg"
-                  src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/12/23/Pictures/_ae26fc2c-4520-11eb-bcf5-ed790659da7b.jpg"
-                  alt=""
+                  src={CDN_URL + item.card.info.imageId}
+                  alt="dish image"
+                  className="item-image"
                 />
-                <div>
-                  <h3>Dish Name</h3>
-                  <p>₹500</p>
-                  <p>Dish Detail</p>
+                <div className="item-details">
+                  <h3 className="item-name">{item.card.info.name}</h3>
+                  <p className="item-price">₹{item.card.info.price / 100}</p>
+                  <p className="item-description">
+                    {item.card.info.description}
+                  </p>
                 </div>
               </div>
-              <div className="flex gap-3 items-center">
-                <div className="border h-8 flex items-center gap-4 px-3 rounded-md">
-                  <span>-</span>0 <span> + </span>
+              <div className="quantity-controls">
+                <div className="flex gap-3 border items-center rounded-lg">
+                  <button className="quantity-button text-red-400">-</button>
+                  <span className="quantity">0</span>
+                  <button className="quantity-button text-green-400">+</button>
                 </div>
-                <p>₹500</p>
-                <span>×</span>
+                <img
+                  className="delete-icon"
+                  src={deleteItemIcon}
+                  alt="delete icon"
+                />
               </div>
             </div>
           ))}
         </div>
-        <div className="pricing border">
+        <div className="cart-summary">
           <h2>Summary</h2>
-          <div>
-            <p>Bill Details</p>
+          <div className="bill-details">
+            <p>
+              Item Total<span>₹122</span>
+            </p>
+            <p>
+              Delivery Partner Fee<span>₹12</span>
+            </p>
+            <p>
+              Platform Fee<span>₹12</span>
+            </p>
+            <p>
+              GST and Restaurant Charges<span>₹12</span>
+            </p>
           </div>
-          <div>
-            <p>Bill Details</p>
-            <div>
-              <p>
-                Item Total <span>₹122</span>
-              </p>
-              <p>
-                Delivery Partner Fee <span>₹12</span>
-              </p>
-            </div>
-            <div>
-              <p>
-                Delivery Tip <span>Add tip</span>
-              </p>
-              <p>
-                Platform Fee <span>₹12</span>
-              </p>
-              <p>
-                GST and Restaurant Charges <span>₹12</span>
-              </p>
-            </div>
+          <div className="apply-promo">
+            <input
+              type="text"
+              placeholder="Promo Code"
+              className="promo-input"
+            />
+            <button className="apply-button">Apply</button>
           </div>
-          <div>
-            <label>Apply Discount Code</label>
-            <input type="text" placeholder="Promo Code" />
-            <button>Apply</button>
+          <div className="order-total">
+            <p>
+              Order Total<span>₹200</span>
+            </p>
           </div>
-
-          <div>
-            <p>Total Bill</p>
-            <span>₹200</span>
-          </div>
+          <button className="checkout-button">PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </div>

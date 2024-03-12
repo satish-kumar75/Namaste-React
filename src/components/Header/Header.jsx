@@ -5,7 +5,7 @@ import useOnlineStatus from "../../hooks/useOnlineStatus";
 import Toggle from "../BtnToggleTheme/Toggle";
 import useLocalStorage from "use-local-storage";
 import { useSelector } from "react-redux";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import Cart from "../../assets/Cart.jsx";
 
 const Header = () => {
@@ -55,7 +55,7 @@ const Header = () => {
             <li className="relative">
               <NavLink to="/cart">
                 <Cart fill="currentColor" className="w-6 h-6" />
-                <span className="cart absolute top-1 right-0 w-5 h-5 rounded-full bg-[#FB7C13] flex items-center justify-center text-xs ">
+                <span className="text-white absolute top-1 right-0 w-5 h-5 rounded-full bg-[#FB7C13] flex items-center justify-center text-xs ">
                   {cartItems.length}
                 </span>
               </NavLink>

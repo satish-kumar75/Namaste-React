@@ -19,6 +19,7 @@
   --toggle-fg: #ffd000;
   --secondary: hsl(27, 97%, 45%);
   --darkPrimary: hsl(27, 97%, 53%);
+  --price-bg: hsl(15, 75%, 93%);
 }
 
 [data-theme="dark"] {
@@ -34,6 +35,8 @@
   --border-bottom: #eaedf349;
   --toggle-bg: #283452;
   --toggle-fg: #00a6ff;
+  --price-bg: hsl(15, 75%, 28%);
+
 }
 
 * {
@@ -42,6 +45,20 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(27, 97%, 95%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, hsl(27, 97%, 63%) 0%, hsl(27, 97%, 78%) 50%, #ffd000 100%);
+  border-radius: 5px;
+}
+
 
 .about-container {
   margin-top: 67px;

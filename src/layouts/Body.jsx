@@ -6,6 +6,7 @@ import Shimmer from "../components/Shimmer/Shimmer";
 import useOnlineStatus from "../hooks/useOnlineStatus";
 import useLocalStorage from "use-local-storage";
 import "../styles/Body.scss";
+import NoInternet from "../components/NoInternet/NoInternet";
 
 const Body = () => {
   const [listOfResturant, setListOfResturant] = useState([]);
@@ -55,10 +56,7 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
-  if (onlineStatus === false)
-    return (
-      <h2>No Internet Connection, Please! check your internet connection</h2>
-    );
+  if (onlineStatus === false) return <NoInternet />;
 
   return (
     <div
