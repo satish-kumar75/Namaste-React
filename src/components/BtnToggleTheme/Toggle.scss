@@ -1,11 +1,9 @@
 .toggle-container {
-    position: absolute;
-    top: 20%;
-    right: 8px;
+    display: flex;
 }
 
 .toggle-checkbox {
-    position: absolute;
+    // position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -15,9 +13,9 @@
 .toggle-slot {
     position: relative;
     cursor: pointer;
-    height: 35px;
-    width: 65px;
-    border: 5px solid #e4e7ec;
+    height: 30px;
+    width: 60px;
+    border: 2px solid #e4e7ec;
     border-radius: 10em;
     background-color: white;
     transition: background-color 250ms;
@@ -87,3 +85,10 @@
     opacity: 1;
     transform: translate(32px, 2px) rotate(-15deg);
 }
+
+// @media screen and (max-width:767px) {
+//     .toggle-container {
+//         top: 0;
+//         right: 230px;
+//     }
+// }

@@ -1,30 +1,43 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
-import logo from "../../assets/logo.png";
 import useOnlineStatus from "../../hooks/useOnlineStatus";
 import Toggle from "../BtnToggleTheme/Toggle";
 import useLocalStorage from "use-local-storage";
 import { useSelector } from "react-redux";
+import logo from "../../assets/logo.png";
+import Cart from "../../assets/Cart.jsx";
 
 const Header = () => {
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [isDark, setIsDark] = useLocalStorage("isDark", preference);
-  const [loginBtn, setLoginBtn] = useState("Login");
+  const [showNav, setShowNav] = useState(false); // State to manage the visibility of navigation on small screens
   const onlineStatus = useOnlineStatus();
   // Subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
+
   return (
     <div>
       <div className="header" data-theme={isDark ? "dark" : "light"}>
         <div className="logo-container">
           <NavLink to="/">
-            <img src={logo} />
+            <img src={logo} alt="Logo" />
           </NavLink>
         </div>
         <div className="nav-item">
-          <ul>
+          <div
+            className={`nav-toggle ${showNav ? "open" : ""}`}
+            onClick={toggleNav}
+          >
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+          <ul className={`nav-list ${showNav ? "open" : ""}`}>
             <li style={{ color: onlineStatus ? "#00D26A" : "red" }}>●</li>
             <li>
               <NavLink to="/">Home</NavLink>
@@ -39,24 +52,14 @@ const Header = () => {
             <li>
               <NavLink to="/grocery">Grocery</NavLink>
             </li>
-            <li>
+            <li className="relative">
               <NavLink to="/cart">
-                Cart{" "}
-                <span className="border-2 px-2 pt-1 rounded-t-full rounded-b-sm">
+                <Cart fill="currentColor" className="w-6 h-6" />
+                <span className="cart absolute top-1 right-0 w-5 h-5 rounded-full bg-[#FB7C13] flex items-center justify-center text-xs ">
                   {cartItems.length}
                 </span>
               </NavLink>
             </li>
-            <button
-              className="login-btn"
-              onClick={() => {
-                loginBtn === "Login"
-                  ? setLoginBtn("LogOut")
-                  : setLoginBtn("Login");
-              }}
-            >
-              {loginBtn}
-            </button>
           </ul>
           <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
         </div>

@@ -54,10 +54,9 @@ const Cart = () => {
           ))}
         </div>
         <div className="pricing border">
+          <h2>Summary</h2>
           <div>
-            <label>ENTER PROMO CODE</label>
-            <input type="text" placeholder="Promo Code" />
-            <button>Submit</button>
+            <p>Bill Details</p>
           </div>
           <div>
             <p>Bill Details</p>
@@ -81,6 +80,12 @@ const Cart = () => {
               </p>
             </div>
           </div>
+          <div>
+            <label>Apply Discount Code</label>
+            <input type="text" placeholder="Promo Code" />
+            <button>Apply</button>
+          </div>
+
           <div>
             <p>Total Bill</p>
             <span>₹200</span>

@@ -215,3 +215,22 @@
     border-bottom: 3px solid transparent;
     border-top: 3px solid #79a70a;
 }
+
+@media screen and (max-width:767px) {
+    .filter {
+        gap: 15px !important;
+        flex-direction: column;
+
+        .search {
+            width: 80%;
+
+            .search-box {
+                width: 100% !important;
+            }
+        }
+
+        .filter-btn {
+            width: 80%;
+        }
+    }
+}
