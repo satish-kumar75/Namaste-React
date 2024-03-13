@@ -1,12 +1,9 @@
 import { ShimmerThumbnail, ShimmerTitle } from "react-shimmer-effects";
-import useLocalStorage from "use-local-storage";
 import "./Shimmer.scss";
 
 const Shimmer = () => {
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [isDark] = useLocalStorage("isDark", preference);
   return (
-    <div className="shimmer-container" data-theme={isDark ? "dark" : "light"}>
+    <div className="shimmer-container">
       {[...Array(10)].map((_, index) => (
         <div key={index} className="shimmer-cards">
           <ShimmerThumbnail

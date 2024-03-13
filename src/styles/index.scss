@@ -4,9 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background-color: #ffffff;
-  --header-background: #ffffff;
+body[data-theme="light"] {
+  --background-color: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
+  --header-background: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --foreground-color: hsl(27, 97%, 58%);
@@ -22,13 +22,13 @@
   --price-bg: hsl(15, 75%, 93%);
 }
 
-[data-theme="dark"] {
-  --header-background: #020d19;
+body[data-theme="dark"] {
+  --header-background: linear-gradient(15deg, rgba(14, 14, 13, 1) 0%, rgba(41, 29, 23, 1) 54%, rgba(61, 46, 32, 1) 100%);
   --shimmer-background-primary: #7c7c7c;
   --shimmer-background-secondary: #b7b0b08b;
   --paragraph-color: rgba(255, 255, 255, 0.756);
   --bage-color: #eae8e8;
-  --background-color: #15161c;
+  --background-color: linear-gradient(15deg, rgba(14, 14, 13, 1) 0%, rgba(41, 29, 23, 1) 54%, rgba(61, 46, 32, 1) 100%);
   --foreground-color: hsl(27, 97%, 58%);
   --primary-text-color: #d8d9d9;
   --secondary-text-color: #0a0a0a;
@@ -44,6 +44,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--background-color);
 }
 
 ::-webkit-scrollbar {
@@ -62,7 +66,7 @@
 
 .about-container {
   margin-top: 67px;
-  background-color: var(--background-color);
+  background: var(--background-color);
 
   h1 {
     color: var(--primary-text-color);
@@ -81,7 +85,7 @@
 .grocery-container {
   margin-top: 67px;
 
-  background-color: var(--background-color);
+  background: var(--background-color);
 
   h2 {
     color: var(--primary-text-color);
@@ -89,7 +93,7 @@
 }
 
 .contact-contaienr {
-  background-color: var(--background-color);
+  background: var(--background-color);
 
   h1 {
     color: var(--primary-text-color);

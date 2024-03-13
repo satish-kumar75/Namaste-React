@@ -3,7 +3,6 @@ import "../styles/RestaurantMenu.scss";
 import { useParams } from "react-router-dom";
 import { CDN_URL, MENU_TYPE } from "../utils/contants";
 import { useState } from "react";
-import useLocalStorage from "use-local-storage";
 import MenuShimmer from "../components/Shimmer/MenuShimmer";
 import useResturantMenu from "../hooks/useResturantMenu";
 import star from "../assets/star.svg";
@@ -13,7 +12,6 @@ import rupee from "../assets/rupee.svg";
 import time from "../assets/time.svg";
 
 const ResturantMenu = () => {
-  const [isDark] = useLocalStorage("isDark");
   const { resId } = useParams();
   const [showIndex, setShowIndex] = useState(0);
 
@@ -38,7 +36,7 @@ const ResturantMenu = () => {
       (c) => c.card?.card?.["@type"] === MENU_TYPE
     );
   return (
-    <div className="main-menu-container" data-theme={isDark ? "dark" : "light"}>
+    <div className="main-menu-container">
       <div className="menu-container">
         <div className="res-detail">
           <div className="res-name flex gap-5">

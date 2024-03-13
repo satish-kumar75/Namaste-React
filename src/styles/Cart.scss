@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    color: var(--primary-text-color);
 
     img {
         width: 300px;
@@ -38,7 +39,7 @@
             padding: 1rem 2rem;
             border-radius: 5px;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 500;
             text-transform: uppercase;
             transition: background-color 0.3s ease;
 
@@ -53,7 +54,7 @@
 /* Cart Container Styles */
 .Main-cart-container {
     min-height: 100svh;
-    background-color: var(--background-color);
+    background: var(--background-color);
 }
 
 .cart-container {

@@ -1,6 +1,6 @@
 .body {
     margin-top: 65px;
-    background-color: var(--background-color);
+    background: var(--background-color);
     padding: 20px 0;
 
     .filter {
@@ -115,7 +115,7 @@
             h3 {
                 font-size: 18px;
                 font-weight: 600;
-               
+
             }
 
             P:nth-child(4),

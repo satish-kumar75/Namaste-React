@@ -4,7 +4,6 @@ import { RES_API } from "../utils/contants";
 import ResturantCard, { topRated } from "./ResturantCard";
 import Shimmer from "../components/Shimmer/Shimmer";
 import useOnlineStatus from "../hooks/useOnlineStatus";
-import useLocalStorage from "use-local-storage";
 import "../styles/Body.scss";
 import NoInternet from "../components/NoInternet/NoInternet";
 
@@ -12,7 +11,6 @@ const Body = () => {
   const [listOfResturant, setListOfResturant] = useState([]);
   const [filteredResturant, setFilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [isDark] = useLocalStorage("isDark");
 
   const TopRatedResturant = topRated(ResturantCard);
 
@@ -61,7 +59,6 @@ const Body = () => {
   return (
     <div
       className="body min-h-[calc(100svh-67px)]"
-      data-theme={isDark ? "dark" : "light"}
     >
       <div className="filter">
         <div className="search">

@@ -3,15 +3,12 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import useOnlineStatus from "../../hooks/useOnlineStatus";
 import Toggle from "../BtnToggleTheme/Toggle";
-import useLocalStorage from "use-local-storage";
 import { useSelector } from "react-redux";
 import logo from "../../assets/logo.svg";
 import Cart from "../../assets/Cart.jsx";
 
 const Header = () => {
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
-  const [showNav, setShowNav] = useState(false); // State to manage the visibility of navigation on small screens
+  const [showNav, setShowNav] = useState(false);
   const onlineStatus = useOnlineStatus();
   // Subscribing to the store using Selector
   const cartItems = useSelector((store) => store.cart.items);
@@ -22,7 +19,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="header" data-theme={isDark ? "dark" : "light"}>
+      <div className="header">
         <div className="logo-container">
           <NavLink to="/">
             <img src={logo} alt="Logo" />
@@ -61,7 +58,7 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
+          <Toggle />
         </div>
       </div>
     </div>

@@ -1,15 +1,9 @@
 import "./MenuShimmer.scss";
-import useLocalStorage from "use-local-storage";
 
 const MenuShimmer = () => {
-  const [isDark] = useLocalStorage("isDark");
-
   return (
-    <div
-      className="main-menu-container min-h-[calc(100svh-67px)]"
-      data-theme={isDark ? "dark" : "light"}
-    >
-      <div className="menu-container" data-theme={isDark ? "dark" : "light"}>
+    <div className="main-menu-container min-h-[calc(100svh-67px)]">
+      <div className="menu-container">
         <div className="res-detail">
           <div className="restaurant-name flex gap-5">
             <div className="h-[120px] w-[120px]"> </div>
