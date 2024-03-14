@@ -7,36 +7,47 @@
 body[data-theme="light"] {
   --background-color: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
   --header-background: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
+  --before-element: linear-gradient(transparent, transparent 50%, rgba(255, 247, 242, 1) 50%, rgba(255, 247, 242, 1));
+  --after-element: linear-gradient(transparent, rgba(255, 255, 255, 0.05) 70%, rgba(252, 198, 181, 0.3) 75%, rgba(252, 186, 135, 1) 40%, rgba(252, 198, 181, 0.3) 65%, rgba(252, 186, 135, 1) 100%);
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
-  --foreground-color: hsl(27, 97%, 58%);
+  --slogan: #fee5e5;
   --bage-color: #a19d9d;
-  --paragraph-color: rgba(2, 6, 12, 0.6);
+  --heading-text: #F54748;
   --primary-text-color: #0d0d0d;
   --secondary-text-color: #ffffff;
   --border-bottom: #eaedf3;
   --toggle-bg: #f0eb9d;
   --toggle-fg: #ffd000;
+  --footer-background: #ffffff;
+  --paragraph-color: rgba(2, 6, 12, 0.6);
+  --button-color: hsl(0, 89%, 67%);
   --secondary: hsl(27, 97%, 45%);
-  --darkPrimary: hsl(27, 97%, 53%);
+  --button-hover: hsl(0, 89%, 62%);
   --price-bg: hsl(15, 75%, 93%);
+
 }
 
 body[data-theme="dark"] {
-  --header-background: linear-gradient(15deg, rgba(14, 14, 13, 1) 0%, rgba(41, 29, 23, 1) 54%, rgba(61, 46, 32, 1) 100%);
-  --shimmer-background-primary: #7c7c7c;
-  --shimmer-background-secondary: #b7b0b08b;
+  --header-background: linear-gradient(0deg, rgba(16, 15, 14, 1) 0%, rgba(61, 46, 32, 1) 100%);
+  --background-color: linear-gradient(15deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 54%, rgba(61, 46, 32, 1) 100%);
+  --before-element: linear-gradient(transparent, transparent 50%, rgba(28, 24, 19, 0.3) 50%, rgba(28, 24, 19, 1));
+  --after-element: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 70%, rgba(103, 55, 40, 0.3) 75%, rgba(192, 128, 70, 1) 40%, rgba(103, 55, 40, 0.3) 65%, rgba(192, 128, 70, 1) 100%);
   --paragraph-color: rgba(255, 255, 255, 0.756);
+  --shimmer-background-secondary: #b7b0b08b;
+  --shimmer-background-primary: #7c7c7c;
+  --slogan: #2c1717;
+  --heading-text: #F65F5F;
   --bage-color: #eae8e8;
-  --background-color: linear-gradient(15deg, rgba(14, 14, 13, 1) 0%, rgba(41, 29, 23, 1) 54%, rgba(61, 46, 32, 1) 100%);
-  --foreground-color: hsl(27, 97%, 58%);
-  --primary-text-color: #d8d9d9;
+  --primary-text-color: #e7e9e9;
   --secondary-text-color: #0a0a0a;
   --border-bottom: #eaedf349;
   --toggle-bg: #283452;
   --toggle-fg: #00a6ff;
+  --footer-background: #0d0d0d;
+  --button-color: hsl(0, 89%, 67%);
+  --button-hover: hsl(0, 89%, 62%);
   --price-bg: hsl(15, 75%, 28%);
-
 }
 
 * {

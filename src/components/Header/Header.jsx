@@ -52,7 +52,7 @@ const Header = () => {
             <li className="relative">
               <NavLink to="/cart">
                 <Cart fill="currentColor" className="w-6 h-6" />
-                <span className="text-white absolute top-1 right-0 w-5 h-5 rounded-full bg-[#FB7C13] flex items-center justify-center text-xs ">
+                <span className="text-white absolute top-1 right-0 w-5 h-5 rounded-full bg-[#F65F5F] flex items-center justify-center text-xs ">
                   {cartItems.length}
                 </span>
               </NavLink>

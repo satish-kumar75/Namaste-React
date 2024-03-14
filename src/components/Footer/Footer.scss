@@ -1,0 +1,109 @@
+.footer {
+    background-color: var(--footer-background);
+    color: var(--primary-text-color);
+    padding: 50px 0;
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        // Individual sections within the footer
+        >div {
+            padding: 10px 20px;
+
+            .social-logo {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+                gap: 18px;
+
+                img:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            h3 {
+                color: var(--heading-text);
+                font-weight: 500;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    cursor: pointer;
+                    margin-bottom: 0.5rem;
+
+                    &:hover {
+                        color: var(--heading-text);
+                    }
+                }
+            }
+
+            .mail {
+                margin-top: 20px;
+                display: flex;
+                gap: 10px;
+
+                input[type="text"] {
+                    height: 50px;
+                    width: 118px;
+                    width: 200px;
+                    background-color: #252525;
+                    padding: 0.5rem 1rem;
+                    margin-bottom: 0.5rem;
+                    border: none;
+                    outline: none;
+                    border-radius: 100px;
+                }
+
+                button {
+                    height: 50px;
+                    width: 118px;
+                    padding: 0.5rem 1rem;
+                    background-color: var(--button-color);
+                    border: none;
+                    font-size: 1rem;
+                    border-radius: 100px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--button-hover);
+                    }
+                }
+            }
+        }
+
+        >div:nth-child(1) {
+            width: 325px;
+        }
+
+        >div:nth-child(2),
+        >div:nth-child(3) {
+            width: 150px;
+        }
+
+        >div:nth-child(4) {
+            width: 379px;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
+}

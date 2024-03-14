@@ -1,0 +1,90 @@
+.home-container {
+    color: var(--primary-text-color);
+    padding: 0 50px;
+
+    .hero-container {
+        min-height: 600px;
+        margin-bottom: 25px;
+
+        .hero-left {
+            width: 530px;
+            min-width: 380px;
+
+            p:nth-child(1) {
+                display: inline-flex;
+                gap: 10px;
+                background-color: var(--slogan);
+                padding: 0.3rem 0.4rem;
+                border-radius: 50px;
+            }
+
+            h1 {
+                font-size: clamp(48px, 10vw, 58px);
+                font-weight: 600;
+                line-height: 70px;
+                margin-bottom: 20px;
+
+                span {
+                    color: var(--heading-text);
+                }
+            }
+
+            .order-btn {
+                color: #fff;
+                margin-top: 20px;
+                padding: 0.5rem 1.4rem;
+                background-color: var(--button-color);
+                border: none;
+                font-size: 1rem;
+                border-radius: 100px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--button-hover);
+                }
+            }
+        }
+
+        .hero-right {
+            margin: 0 60px;
+            position: relative;
+            width: clamp(250px, 40vw, 430px);
+            border-radius: 50%;
+        }
+
+        .hero-right img {
+            display: block;
+            width: 100%;
+        }
+
+        .hero-right::before,
+        .hero-right::after {
+            content: "";
+            position: absolute;
+
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+        }
+
+        .hero-right::before {
+            background: var(--before-element);
+            width: 107%;
+            height: 82%;
+            bottom: 38%;
+            left: 50%;
+            z-index: -1;
+        }
+
+        .hero-right::after {
+            background: var(--after-element);
+            width: 119%;
+            bottom: 44%;
+            left: 50%;
+            height: 100%;
+            z-index: -2;
+        }
+
+
+
+    }
+}

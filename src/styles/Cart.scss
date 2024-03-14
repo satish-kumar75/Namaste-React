@@ -34,8 +34,7 @@
 
 
         .explore-restaurants-link {
-            background-color: #fb7c13;
-            color: #fff;
+            background-color:var(--button-color);
             padding: 1rem 2rem;
             border-radius: 5px;
             font-size: 1.2rem;
@@ -44,7 +43,7 @@
             transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: #eb700b;
+                background-color: var(--button-hover);
             }
         }
     }
@@ -191,7 +190,7 @@
             }
 
             .apply-button {
-                background-color: #ff6f61;
+                background-color: var(--button-color);
                 color: white;
                 border: none;
                 padding: 0.5rem 2rem;
@@ -201,7 +200,7 @@
                 font-size: 1.2rem;
 
                 &:hover {
-                    background-color: #ff524b;
+                    background-color: var(--button-hover);
                 }
             }
         }
@@ -218,7 +217,7 @@
         }
 
         .checkout-button {
-            background-color: #fb7c13;
+            background-color: var(--button-color);
             color: white;
             border: none;
             padding: 0.6rem 1rem;
@@ -230,7 +229,7 @@
             margin-top: 2rem;
 
             &:hover {
-                background-color: #ff524b;
+                background-color: var(--button-hover);
             }
         }
     }

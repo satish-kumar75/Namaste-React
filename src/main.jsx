@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Body from "./layouts/Body";
+import Home from "./layouts/Home";
 import Header from "./components/Header/Header";
 import ContactUs from "./layouts/ContactUs";
 import Error from "./components/Error/Error";
@@ -11,6 +12,7 @@ import "./styles/index.scss";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./layouts/Cart";
+import Footer from "./components/Footer/Footer";
 
 const About = lazy(() => import("./layouts/About"));
 const Grocery = lazy(() => import("./layouts/Grocery"));
@@ -20,6 +22,7 @@ const AppLayout = () => {
     <div>
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };
@@ -31,7 +34,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Home />,
       },
       {
         path: "/about",

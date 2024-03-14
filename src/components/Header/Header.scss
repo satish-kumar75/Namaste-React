@@ -7,17 +7,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    // border-bottom: 0.5px solid var(--border-bottom);
     background: var(--header-background);
-    // box-shadow: 3px 3px 20px var(--border-bottom);
     z-index: 99;
 
     .logo-container {
-        width: 140px;
+        // width: 140px;
 
         img {
-            height: 50px;
-            width: 160px;
+            width: clamp(90px, 20vw, 140px);
         }
     }
 
@@ -34,7 +31,7 @@
             div {
                 width: 25px;
                 height: 3px;
-                background-color: var(--primary-text-color);
+                background-color: var(--heading-text);
                 margin: 4px 0;
                 transition: transform 0.3s ease;
             }
@@ -55,12 +52,12 @@
                     color: var(--primary-text-color);
 
                     &:hover {
-                        color: var(--foreground-color);
+                        color: var(--button-color);
                     }
                 }
 
                 .active {
-                    color: var(--foreground-color);
+                    color: var(--button-hover);
                 }
             }
         }
@@ -98,8 +95,8 @@
                 width: 100%;
                 padding: 1rem 0;
                 background: var(--header-background);
-                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-                border-radius: 5px;
+                // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 5px 5px;
                 z-index: 10;
                 overflow-y: auto;
                 transition: transform 0.3s ease;
