@@ -91,7 +91,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <NavLink to="/restaurant" className="order-btn">
+          <NavLink to="/about" className="order-btn">
             <span></span>
             <span></span>
             <span></span>
