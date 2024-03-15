@@ -48,11 +48,30 @@
                 cursor: pointer;
 
                 a {
+                    position: relative;
                     text-decoration: none;
                     color: var(--primary-text-color);
+                    transition: color 0.3s ease-in;
 
                     &:hover {
                         color: var(--button-color);
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 0;
+                        width: 0;
+                        height: 3px;
+                        border-radius: 50px;
+                        background-color: var(--button-color);
+                        transition: width 0.3s ease-in;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+
                     }
                 }
 
