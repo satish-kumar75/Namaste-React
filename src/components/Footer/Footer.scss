@@ -29,7 +29,7 @@
             h3 {
                 color: var(--heading-text);
                 font-weight: 500;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 margin-bottom: 1rem;
             }
 
@@ -44,6 +44,7 @@
                 margin: 0;
 
                 li {
+                    font-size: 14px;
                     cursor: pointer;
                     margin-bottom: 0.5rem;
 
@@ -62,7 +63,7 @@
 
                 input[type="text"],
                 button {
-                    height: 50px;
+                    // height: 50px;
                     background-color: #252525;
                     padding: 0.5rem 1rem;
                     margin-bottom: 0.5rem;
@@ -102,5 +103,16 @@
         text-align: center;
         margin-top: 30px;
         font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .mail {
+
+        input[type="text"],
+        button {
+            padding: 0.6rem 0.7rem !important;
+            font-size: 0.8rem !important;
+        }
     }
 }

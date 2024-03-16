@@ -1,18 +1,12 @@
 .error-container {
-    background: var(--background-color);
     margin-top: 67px;
     height: calc(100vh - 67px);
 
-    .error-P {
-        color: var(--primary-text-color);
-    }
-
     .return-btn {
-        background-color: var(--primary-text-color);
-        color: var(--background-color);
+        background-color: var(--button-color);
 
         &:hover {
-            background-color: var(--paragraph-color);
+            background-color: var(--button-hover);
         }
     }
 }

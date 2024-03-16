@@ -36,10 +36,10 @@ const Error = () => {
     >
       <div>
         <div className="row">
-          <div className="sm:col-span-12 md:col-span-12 pt-5 pb-5">
+          <div className="p-5 flex items-center flex-col justify-center">
             <svg
               width="100%"
-              height="400px"
+              style={{ maxHeight: "400px" }}
               viewBox="0 0 636 324"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -1207,11 +1207,12 @@ const Error = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className="text-center mt-7 font-medium text-2xl error-P">
-              You've reached a 404 page
+            <p className="text-center mt-9 m-auto text-lg text-gray-500 max-w-lg">
+              Looks like this page is taking a 🍔 lunch break. Our chefs are
+              cooking up something tasty 🍕elsewhere, head back to the homepage.
             </p>
-            <p className="text-center mt-3 font-medium text-xl text-gray-500">
-              Not to worry! We'll help you to find what you need.
+            <p className="text-center mt-3 text-2xl font-medium ">
+              <i>We'll be back with a full plate soon! 🍽️</i>
             </p>
             <NavLink
               to="/"

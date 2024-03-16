@@ -4,9 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body[data-theme="light"] {
-  --background-color: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
-  --header-background: linear-gradient(15deg, rgba(255, 254, 254, 1) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
+  --background-color:
+    linear-gradient(180deg, rgba(245, 71, 72, 0.06) 0%, rgba(255, 255, 255, 0) 50%, rgba(245, 71, 72, 0.06) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(245, 71, 72, 0.06) 30%, rgba(255, 255, 255, 0) 70%);
+  --header-background: linear-gradient(15deg, rgb(255, 253, 253) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
   --before-element: linear-gradient(transparent, transparent 50%, rgba(255, 247, 242, 1) 50%, rgba(255, 247, 242, 1));
   --after-element: linear-gradient(transparent, rgba(255, 255, 255, 0.05) 70%, rgba(252, 198, 181, 0.3) 75%, rgba(252, 186, 135, 1) 40%, rgba(252, 198, 181, 0.3) 65%, rgba(252, 186, 135, 1) 100%);
   --shimmer-background-primary: #f6f6f6;
@@ -29,8 +32,11 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] {
-  --header-background: linear-gradient(0deg, rgba(16, 15, 14, 1) 0%, rgba(61, 46, 32, 1) 100%);
-  --background-color: linear-gradient(15deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 54%, rgba(61, 46, 32, 1) 100%);
+  --background-color:
+    linear-gradient(180deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 50%, rgba(27, 21, 18, 1) 100%),
+    linear-gradient(180deg, rgba(27, 21, 18, 1) 0%, rgba(61, 46, 32, 1) 30%, rgba(61, 46, 32, 1) 70%);
+  --header-background: linear-gradient(180deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 50%, rgba(27, 21, 18, 1) 100%),
+    linear-gradient(180deg, rgba(27, 21, 18, 1) 0%, rgba(61, 46, 32, 1) 30%, rgba(61, 46, 32, 1) 70%);
   --before-element: linear-gradient(transparent, transparent 50%, rgba(28, 24, 19, 0.3) 50%, rgba(28, 24, 19, 1));
   --after-element: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 70%, rgba(103, 55, 40, 0.3) 75%, rgba(192, 128, 70, 1) 40%, rgba(103, 55, 40, 0.3) 65%, rgba(192, 128, 70, 1) 100%);
   --paragraph-color: rgba(255, 255, 255, 0.756);
@@ -59,54 +65,27 @@ body[data-theme="dark"] {
 
 body {
   background: var(--background-color);
+  color: var(--primary-text-color);
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(27, 97%, 95%);
+  background: var(--background-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to right, hsl(27, 97%, 63%) 0%, hsl(27, 97%, 78%) 50%, #ffd000 100%);
+  background: linear-gradient(to right, hsl(4, 97%, 63%) 0%, hsl(0, 96%, 78%) 50%, #ff0000 100%);
   border-radius: 5px;
 }
 
 
 .about-container {
   margin-top: 67px;
-  background: var(--background-color);
-
-  h1 {
-    color: var(--primary-text-color);
-  }
-
-  .user-info-container {
-
-    p,
-    h2,
-    li {
-      color: var(--primary-text-color);
-    }
-  }
 }
 
 .grocery-container {
   margin-top: 67px;
-
-  background: var(--background-color);
-
-  h2 {
-    color: var(--primary-text-color);
-  }
-}
-
-.contact-contaienr {
-  background: var(--background-color);
-
-  h1 {
-    color: var(--primary-text-color);
-  }
 }
