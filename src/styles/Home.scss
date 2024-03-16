@@ -164,7 +164,7 @@
             margin-bottom: 30px;
             margin-right: 60px;
             position: relative;
-            width: clamp(240px, 40vw, 430px);
+            width: clamp(240px, 35vw, 430px);
             border-radius: 50%;
 
             img:nth-child(1) {
@@ -276,7 +276,7 @@
 
     .H-container {
         >img:nth-child(1) {
-            width: clamp(240px, 80vw, 430px);
+            width: clamp(240px, 70vw, 430px);
         }
 
         div:nth-child(2) {
@@ -307,7 +307,7 @@
 
     .H2-container {
         >img {
-            width: clamp(240px, 80vw, 430px);
+            width: clamp(240px, 70vw, 430px);
         }
 
         >div {

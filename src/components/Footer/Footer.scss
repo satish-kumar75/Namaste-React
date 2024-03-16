@@ -1,13 +1,13 @@
 .footer {
     background-color: var(--footer-background);
     color: var(--primary-text-color);
-    padding: 50px 0;
+    padding: 50px 10px;
 
     .footer-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-width: 1200px;
+        max-width: 1450px;
         margin: 0 auto;
 
         // Individual sections within the footer
