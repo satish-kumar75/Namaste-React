@@ -55,37 +55,33 @@
 
             .mail {
                 margin-top: 20px;
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: 2fr 1fr;
                 gap: 10px;
 
-                input[type="text"] {
+
+                input[type="text"],
+                button {
                     height: 50px;
-                    width: 118px;
-                    width: 200px;
                     background-color: #252525;
                     padding: 0.5rem 1rem;
                     margin-bottom: 0.5rem;
                     border: none;
                     outline: none;
                     border-radius: 100px;
+                    font-size: 1rem;
+                    cursor: pointer;
                 }
 
                 button {
-                    height: 50px;
-                    width: 118px;
-                    padding: 0.5rem 1rem;
                     background-color: var(--button-color);
-                    border: none;
-                    font-size: 1rem;
-                    border-radius: 100px;
-                    cursor: pointer;
 
                     &:hover {
                         background-color: var(--button-hover);
                     }
                 }
             }
+
         }
 
         >div:nth-child(1) {

@@ -104,8 +104,16 @@ const H2ContainerContent = () => (
         most companies are opting for mobile app devlopment for food delivery
       </p>
       <div className="flex gap-x-4 mt-4">
-        <img src={assets.googlestore} alt="" />
-        <img src={assets.appstore} alt="" />
+        <img
+          className="cursor-pointer hover:scale-110 transition-all"
+          src={assets.googlestore}
+          alt=""
+        />
+        <img
+          className="cursor-pointer hover:scale-110 transition-all"
+          src={assets.appstore}
+          alt=""
+        />
       </div>
     </div>
     <img src={assets.hero3} alt="" />
