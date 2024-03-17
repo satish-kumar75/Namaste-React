@@ -6,7 +6,7 @@ import "./Toggle.scss";
 
 const Toggle = () => {
   const [isChecked, setIsChecked] = useState(
-    localStorage.getItem("isDark") === "true"
+    localStorage.getItem("isDark") === "true",
   );
 
   useEffect(() => {

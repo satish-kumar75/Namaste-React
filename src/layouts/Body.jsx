@@ -47,7 +47,7 @@ const Body = () => {
 
   const handleFilter = () => {
     const filteredList = listOfResturant.filter(
-      (res) => res.info.avgRatingString >= 4
+      (res) => res.info.avgRatingString >= 4,
     );
     setListOfResturant(filteredList);
   };
@@ -57,9 +57,7 @@ const Body = () => {
   if (onlineStatus === false) return <NoInternet />;
 
   return (
-    <div
-      className="body min-h-[calc(100svh-67px)]"
-    >
+    <div className="body min-h-[calc(100svh-67px)]">
       <div className="filter">
         <div className="search">
           <input

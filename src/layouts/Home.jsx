@@ -55,7 +55,7 @@ const HContainerContent = () => (
         addition to light refreshments such as baked goods or snacks. The term
         comes from the French word meaning food.
       </p>
-      <div className="flex gap-x-16 flex-wrap">
+      <div className="flex flex-wrap  gap-x-24">
         <div className="flex-cont">
           <p className="flex items-center">
             <img src={assets.order} alt="" className="mr-2" /> Online Order
@@ -105,12 +105,12 @@ const H2ContainerContent = () => (
       </p>
       <div className="flex gap-x-4 mt-4">
         <img
-          className="cursor-pointer hover:scale-110 transition-all"
+          className="store cursor-pointer hover:scale-110 transition-all"
           src={assets.googlestore}
           alt=""
         />
         <img
-          className="cursor-pointer hover:scale-110 transition-all"
+          className="store cursor-pointer hover:scale-110 transition-all"
           src={assets.appstore}
           alt=""
         />

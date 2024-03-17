@@ -1,9 +1,12 @@
 .shimmer-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 15px;
   padding: 18px 50px;
   background: var(--background-color);
+  transition: 0.3s;
+  animation: fadeIn 1s;
+
 
   .shimmer-cards {
     .shimmer {

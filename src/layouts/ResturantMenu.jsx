@@ -33,7 +33,7 @@ const ResturantMenu = () => {
 
   const categories =
     resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) => c.card?.card?.["@type"] === MENU_TYPE
+      (c) => c.card?.card?.["@type"] === MENU_TYPE,
     );
   return (
     <div className="main-menu-container">

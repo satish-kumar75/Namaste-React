@@ -1,22 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 body[data-theme="light"] {
-  --background-color:
-    linear-gradient(180deg, rgba(245, 71, 72, 0.06) 0%, rgba(255, 255, 255, 0) 50%, rgba(245, 71, 72, 0.06) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(245, 71, 72, 0.06) 30%, rgba(255, 255, 255, 0) 70%);
-  --header-background: linear-gradient(15deg, rgb(255, 253, 253) 0%, rgba(255, 247, 242, 1) 54%, rgba(254, 237, 222, 1) 100%);
-  --before-element: linear-gradient(transparent, transparent 50%, rgba(255, 247, 242, 1) 50%, rgba(255, 247, 242, 1));
-  --after-element: linear-gradient(transparent, rgba(255, 255, 255, 0.05) 70%, rgba(252, 198, 181, 0.3) 75%, rgba(252, 186, 135, 1) 40%, rgba(252, 198, 181, 0.3) 65%, rgba(252, 186, 135, 1) 100%);
+  --background-color: linear-gradient(180deg,
+      rgba(245, 71, 72, 0.06) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(245, 71, 72, 0.06) 100%),
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(245, 71, 72, 0.06) 30%,
+      rgba(255, 255, 255, 0) 70%);
+  --header-background: linear-gradient(15deg,
+      rgb(255, 253, 253) 0%,
+      rgba(255, 247, 242, 1) 54%,
+      rgba(254, 237, 222, 1) 100%);
+  --before-element: linear-gradient(transparent,
+      transparent 50%,
+      rgba(255, 247, 242, 1) 50%,
+      rgba(255, 247, 242, 1));
+  --after-element: linear-gradient(transparent,
+      rgba(255, 255, 255, 0.05) 70%,
+      rgba(252, 198, 181, 0.3) 75%,
+      rgba(252, 186, 135, 1) 40%,
+      rgba(252, 198, 181, 0.3) 65%,
+      rgba(252, 186, 135, 1) 100%);
   --shimmer-background-primary: #f6f6f6;
   --shimmer-background-secondary: #f0f0f0;
   --slogan: #fee5e5;
   --bage-color: #a19d9d;
-  --heading-text: #F54748;
+  --heading-text: #f54748;
   --primary-text-color: #0d0d0d;
   --secondary-text-color: #ffffff;
   --border-bottom: #eaedf3;
@@ -28,22 +44,40 @@ body[data-theme="light"] {
   --secondary: hsl(27, 97%, 45%);
   --button-hover: hsl(0, 89%, 62%);
   --price-bg: hsl(15, 75%, 93%);
-
 }
 
 body[data-theme="dark"] {
-  --background-color:
-    linear-gradient(180deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 50%, rgba(27, 21, 18, 1) 100%),
-    linear-gradient(180deg, rgba(27, 21, 18, 1) 0%, rgba(61, 46, 32, 1) 30%, rgba(61, 46, 32, 1) 70%);
-  --header-background: linear-gradient(180deg, rgba(16, 15, 14, 1) 0%, rgba(27, 21, 18, 1) 50%, rgba(27, 21, 18, 1) 100%),
-    linear-gradient(180deg, rgba(27, 21, 18, 1) 0%, rgba(61, 46, 32, 1) 30%, rgba(61, 46, 32, 1) 70%);
-  --before-element: linear-gradient(transparent, transparent 50%, rgba(28, 24, 19, 0.3) 50%, rgba(28, 24, 19, 1));
-  --after-element: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 70%, rgba(103, 55, 40, 0.3) 75%, rgba(192, 128, 70, 1) 40%, rgba(103, 55, 40, 0.3) 65%, rgba(192, 128, 70, 1) 100%);
+  --background-color: linear-gradient(180deg,
+      rgba(16, 15, 14, 1) 0%,
+      rgba(27, 21, 18, 1) 50%,
+      rgba(27, 21, 18, 1) 100%),
+    linear-gradient(180deg,
+      rgba(27, 21, 18, 1) 0%,
+      rgba(61, 46, 32, 1) 30%,
+      rgba(61, 46, 32, 1) 70%);
+  --header-background: linear-gradient(180deg,
+      rgba(16, 15, 14, 1) 0%,
+      rgba(27, 21, 18, 1) 50%,
+      rgba(27, 21, 18, 1) 100%),
+    linear-gradient(180deg,
+      rgba(27, 21, 18, 1) 0%,
+      rgba(61, 46, 32, 1) 30%,
+      rgba(61, 46, 32, 1) 70%);
+  --before-element: linear-gradient(transparent,
+      transparent 50%,
+      rgba(28, 24, 19, 0.3) 50%,
+      rgba(28, 24, 19, 1));
+  --after-element: linear-gradient(transparent,
+      rgba(0, 0, 0, 0.05) 70%,
+      rgba(103, 55, 40, 0.3) 75%,
+      rgba(192, 128, 70, 1) 40%,
+      rgba(103, 55, 40, 0.3) 65%,
+      rgba(192, 128, 70, 1) 100%);
   --paragraph-color: rgba(255, 255, 255, 0.756);
   --shimmer-background-secondary: #b7b0b08b;
   --shimmer-background-primary: #7c7c7c;
   --slogan: #2c1717;
-  --heading-text: #F65F5F;
+  --heading-text: #f65f5f;
   --bage-color: #eae8e8;
   --primary-text-color: #e7e9e9;
   --secondary-text-color: #0a0a0a;
@@ -77,15 +111,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to right, hsl(4, 97%, 63%) 0%, hsl(0, 96%, 78%) 50%, #ff0000 100%);
+  background: linear-gradient(to right,
+      hsl(4, 97%, 63%) 0%,
+      hsl(0, 96%, 78%) 50%,
+      #ff0000 100%);
   border-radius: 5px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
 
-.about-container {
-  margin-top: 67px;
+  100% {
+    opacity: 1;
+  }
 }
 
+.about-container,
 .grocery-container {
   margin-top: 67px;
 }

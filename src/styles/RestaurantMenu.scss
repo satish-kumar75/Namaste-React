@@ -69,8 +69,6 @@
         color: var(--primary-text-color);
       }
     }
-
-
   }
 }
 
@@ -111,7 +109,7 @@
 
     .add-btn {
       position: absolute;
-      background-color: #ffffff;
+      background-color: var(--button-color);
       padding: 5px 25px;
       border: 1px solid var(--border-bottom);
       border-radius: 5px;
@@ -120,7 +118,6 @@
 
       p {
         font-size: 15px;
-        color: rgb(35, 176, 35);
         font-weight: 500;
       }
 
@@ -128,6 +125,20 @@
         position: absolute;
         top: -5px;
         right: 0;
+      }
+    }
+
+    .quantity-controls {
+      background-color: #ffffff;
+      color: #000;
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      border-radius: 5px;
+
+      .quantity-button {
+        width: 90px;
+        padding: 0.1rem 0.7rem;
       }
     }
 

@@ -44,8 +44,8 @@ class UserClass extends React.Component {
       blog,
     } = this.state.userInfo;
     return (
-      <div className="user-info-container grid place-content-center gap-12 p-3">
-        <div>
+      <div className="user-info-container grid place-content-center gap-12 p-3 sm:grid-cols-2">
+        <div className="flex flex-col items-center gap-5">
           <img
             className="h-auto w-64 rounded-full mb-5"
             src={avatar_url}
@@ -54,7 +54,7 @@ class UserClass extends React.Component {
           <p className="text-2xl">{name}</p>
           <p>{login}</p>
           <p className="my-2">{bio}</p>
-          <button className="edit-btn-G px-3 py-2 rounded-lg w-full mb-2 font-semibold">
+          <button className="edit-btn-G px-3 py-2 rounded-lg w-48 mb-2 font-semibold">
             Edit Profile
           </button>
           <p className="text-sm">

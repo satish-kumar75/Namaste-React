@@ -1,4 +1,3 @@
-
 const Grocery = () => {
   return (
     <div className="grocery-container min-h-[calc(100svh-67px)]">

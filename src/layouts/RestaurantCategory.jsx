@@ -24,7 +24,6 @@ const Icon = ({ open }) => {
 };
 
 const RestaurantCategory = ({ data, showItems, onClick }) => {
-
   return (
     <div>
       <div>
