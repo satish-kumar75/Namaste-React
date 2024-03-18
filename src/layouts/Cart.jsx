@@ -8,6 +8,7 @@ import "../styles/Cart.scss";
 import { addItems, deleteItem, removeItems } from "../utils/cartSlice";
 import { useState, useMemo } from "react";
 import { applyCoupon, clearCoupon } from "../utils/couponSlice";
+import toast, { Toaster } from "react-hot-toast";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const CartItem = ({ item }) => {
   };
 
   const handleDeleteItem = (item) => {
+    toast.success("Item removed from cart");
     dispatch(clearCoupon());
     dispatch(deleteItem(item));
   };
@@ -80,13 +82,16 @@ const Cart = () => {
   const handleApplyCoupon = () => {
     if (!couponCode.trim()) {
       setError("Please enter a coupon code");
+      toast.error("Please enter a coupon code");
       return;
     }
     if (couponCode !== "SWIGGY") {
       setError("Invalid coupon code");
+      toast.error("Invalid coupon code");
       return;
     }
     dispatch(applyCoupon({ code: couponCode }));
+    toast.success("Coupon code applied sucessfully");
     setError(""); // Clear any previous errors
   };
 
@@ -108,6 +113,8 @@ const Cart = () => {
 
   return cartItems.length === 0 ? (
     <div className="empty-cart">
+      <Toaster position="top-center" reverseOrder={false} />
+
       <img src={emptyCartImage} alt="empty cart image" />
       <div className="empty-cart-content">
         <h3>Your Cart is Empty</h3>
@@ -119,6 +126,7 @@ const Cart = () => {
     </div>
   ) : (
     <div className="Main-cart-container">
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="cart-container">
         <h2 className="cart-title">My Cart</h2>
         <div className="cart-items-container">
@@ -149,12 +157,12 @@ const Cart = () => {
                 placeholder="Enter Coupon Code"
                 className="promo-input"
                 value={couponCode}
-                onChange={(e) => setCouponCode(e.target.value)}
+                onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
               />
               <button className="apply-button" onClick={handleApplyCoupon}>
                 Apply
               </button>
-              {error && <p className="error-message">{error}</p>}
+              {/* {error && {} <p className="error-message">{error}</p>} */}
             </div>
             <div className="order-total">
               <p>
