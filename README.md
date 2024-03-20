@@ -44,10 +44,10 @@ $ Install dependencies:
 $ Start the development server:
    npm run dev
 ```
------
-![Alt text](./src/assets/readme/RetaurantPage.png "a title")
------
-![Alt text](./src/assets/readme/MenuPage.png "a title")
+
+---
+
+![Alt text](./src/assets/readme/mockup.png "a title")
 
 ## Usage
 
