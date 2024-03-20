@@ -100,6 +100,10 @@ body[data-theme="dark"] {
 body {
   background: var(--background-color);
   color: var(--primary-text-color);
+  transition:
+    background-color 3s,
+    color 3s,
+    transform 3s cubic-bezier(0.26, 2, 0.46, 0.71);
 }
 
 ::-webkit-scrollbar {

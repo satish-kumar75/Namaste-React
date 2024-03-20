@@ -11,6 +11,8 @@ const Body = () => {
   const [listOfResturant, setListOfResturant] = useState([]);
   const [filteredResturant, setFilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  // console.log(listOfResturant);
 
   const TopRatedResturant = topRated(ResturantCard);
 
@@ -27,6 +29,7 @@ const Body = () => {
           ?.restaurants;
       setListOfResturant(restaurants);
       setFilteredResturant(restaurants);
+      // console.log(json?.data?.data?.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -45,11 +48,73 @@ const Body = () => {
   //   }
   // };
 
-  const handleFilter = () => {
-    const filteredList = listOfResturant.filter(
-      (res) => res.info.avgRatingString >= 4,
-    );
-    setListOfResturant(filteredList);
+  const options = [
+    {
+      value: "veg",
+      label: "Pure Veg",
+    },
+    {
+      value: "nonveg",
+      label: "Non Veg",
+    },
+    {
+      value: "ratings45",
+      label: "Rating 4.5+",
+    },
+    {
+      value: "ratings35",
+      label: "Ratings 3.5+",
+    },
+    {
+      value: "delivery",
+      label: "Fast delivery",
+    },
+  ];
+  const handleFilter = (e) => {
+    const value = e.target.value;
+    setSelectedOption(value);
+
+    let filteredList;
+
+    switch (value) {
+      case "veg":
+        filteredList = listOfResturant.filter(
+          (res) =>
+            res.info && (res.info.veg === true || res.info.veg === undefined),
+        );
+        break;
+      case "nonveg":
+        filteredList = listOfResturant.filter(
+          (res) =>
+            res.info &&
+            (res.info.nonveg === true || res.info.nonveg === undefined),
+        );
+        break;
+      case "ratings45":
+        filteredList = listOfResturant.filter(
+          (res) => res.info && parseFloat(res.info.avgRatingString) >= 4.5,
+        );
+        break;
+      case "ratings35":
+        filteredList = listOfResturant.filter(
+          (res) =>
+            res.info &&
+            parseFloat(res.info.avgRatingString) >= 3.5 &&
+            parseFloat(res.info.avgRatingString) < 4.2,
+        );
+        break;
+      case "delivery":
+        filteredList = listOfResturant.filter(
+          (res) => res.info.sla.lastMileTravel <= 2,
+        );
+        break;
+      default:
+        filteredList = listOfResturant;
+        break;
+    }
+
+    setFilteredResturant(filteredList);
+    console.log(filteredResturant);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -63,14 +128,27 @@ const Body = () => {
           <input
             className="search-box"
             type="text"
-            // value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           {/* <button onClick={handleSearch}>Search</button> */}
         </div>
-        <button className="filter-btn" onClick={handleFilter}>
+        {/* <button className="filter-btn" onClick={handleFilter}>
           Filter Restaurant
-        </button>
+        </button> */}
+        <select
+          className="filter-btn"
+          value={selectedOption}
+          onChange={handleFilter}
+        >
+          <option value="">Select an option</option>
+          {options.map((option, index) => {
+            return (
+              <option key={index} value={option.value}>
+                {option.label}
+              </option>
+            );
+          })}
+        </select>
       </div>
       {listOfResturant.length === 0 ? (
         <Shimmer />

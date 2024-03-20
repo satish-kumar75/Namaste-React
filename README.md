@@ -30,14 +30,14 @@ Welcome to our food delivery website, a clone of popular platforms like Swiggy a
 
 ## Technologies Used
 
-- **Frontend**: ReactJs, Redux, SCSS, Vite
+- **Frontend**: ReactJs, Redux, SCSS, TailwindCSS, Vite
 - **APIs**: Uesing Swiggy API to fetch the restaurant data
 - **API Use in this**: https://food-wagon-backend.onrender.com/api/restaurants?lat=25.61011402528211&lng=85.116419903934
 
 ## Installation
 
 ```bash
-
+tree /L 1
 $ Clone the repository:
    git clone https://github.com/satish-kumar75/Namaste-React.git
 
