@@ -1,5 +1,11 @@
 # Food Delivery Website
 
+---
+
+![Alt text](./src/assets/readme/mockup.png "a title")
+
+---
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -44,10 +50,6 @@ $ Install dependencies:
 $ Start the development server:
    npm run dev
 ```
-
----
-
-![Alt text](./src/assets/readme/mockup.png "a title")
 
 ## Usage
 
