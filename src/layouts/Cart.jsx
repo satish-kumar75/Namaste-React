@@ -8,7 +8,7 @@ import "../styles/Cart.scss";
 import { addItems, deleteItem, removeItems } from "../utils/cartSlice";
 import { useState, useMemo } from "react";
 import { applyCoupon, clearCoupon } from "../utils/couponSlice";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "sonner";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -113,20 +113,20 @@ const Cart = () => {
 
   return cartItems.length === 0 ? (
     <div className="empty-cart">
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster richColors position="top-right" />
 
       <img src={emptyCartImage} alt="empty cart image" />
       <div className="empty-cart-content">
         <h3>Your Cart is Empty</h3>
         <p>Looks like you haven’t added anything to your cart yet.</p>
-        <NavLink to={"/"} className="explore-restaurants-link">
+        <NavLink to={"/home"} className="explore-restaurants-link">
           Explore Restaurants Near You
         </NavLink>
       </div>
     </div>
   ) : (
     <div className="Main-cart-container">
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster richColors position="top-right" />
       <div className="cart-container">
         <h2 className="cart-title">My Cart</h2>
         <div className="cart-items-container">

@@ -128,6 +128,7 @@ const Body = () => {
           <input
             className="search-box"
             type="text"
+            placeholder="Enter restaurant name"
             onChange={(e) => setSearchText(e.target.value)}
           />
           {/* <button onClick={handleSearch}>Search</button> */}

@@ -7,7 +7,7 @@
   color: var(--primary-text-color);
 
   img {
-    width: 300px;
+    width: clamp(200px, 30vw, 300px);
     height: auto;
     margin-bottom: 2rem;
   }
@@ -19,14 +19,14 @@
     flex-direction: column;
 
     h3 {
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
       font-weight: 500;
       margin-bottom: 1rem;
       text-align: center;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: clamp(0.8rem, 3vw, 1.2rem);
       text-align: center;
       margin-bottom: 2rem;
       color: #666;
@@ -36,7 +36,7 @@
       background-color: var(--button-color);
       padding: 1rem 2rem;
       border-radius: 5px;
-      font-size: 1.2rem;
+      font-size: clamp(0.6rem, 3vw, 1.2rem);
       font-weight: 500;
       text-transform: uppercase;
       transition: background-color 0.3s ease;
@@ -244,5 +244,9 @@
 
   .item-description {
     max-width: 120px !important;
+  }
+
+  .explore-restaurants-link {
+    padding: 0.8rem 1rem !important;
   }
 }

@@ -2,7 +2,7 @@ import nointernet from "../../assets/NoConnection.svg";
 import "./NoInternet.scss";
 const NoInternet = () => {
   return (
-    <div className="lost-internet mt-28">
+    <div className="lost-internet">
       <img src={nointernet} alt="no internet connection" />
       <div>
         <h3 className="text-center mb-3">Lost Connection</h3>

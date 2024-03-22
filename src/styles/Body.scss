@@ -38,21 +38,23 @@
 
     .filter-btn {
       cursor: pointer;
+      outline: none;
       padding: 6px 10px;
       border-radius: 8px;
       font-weight: 500;
       border: 1px solid var(--border-bottom);
-      color: var(--primary-text-color);
-      background-color: var(--button-color);
+      // color: var(--primary-text-color);
+      color: var(--button-color);
+      background: var(--background-color);
       transition: all 0.3s;
 
       &:hover {
-        background-color: var(--button-hover);
+        background: var(--background-color);
       }
-
     }
   }
 }
+
 
 .res-container {
   gap: 15px;

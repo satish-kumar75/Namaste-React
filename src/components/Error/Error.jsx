@@ -7,7 +7,7 @@ import anime from "animejs";
 const Error = () => {
   const [isDark] = useLocalStorage("isDark");
 
-  const err = useRouteError();
+  // const err = useRouteError();
   useEffect(() => {
     anime({
       targets: ".row svg",
@@ -25,7 +25,7 @@ const Error = () => {
       loop: true,
       easing: "easeInOutSine",
       direction: "alternate",
-      scale: [{ value: 1 }, { value: 1.4 }, { value: 1, delay: 250 }],
+      scale: [{ value: 1 }, { value: 1.2 }, { value: 1, delay: 250 }],
       rotateY: { value: "+=180", delay: 200 },
     });
   }, []);
@@ -39,7 +39,7 @@ const Error = () => {
           <div className="p-5 flex items-center flex-col justify-center">
             <svg
               width="100%"
-              style={{ maxHeight: "400px" }}
+              style={{ maxHeight: "350px" }}
               viewBox="0 0 636 324"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

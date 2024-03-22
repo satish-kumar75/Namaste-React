@@ -41,17 +41,17 @@
   }
 
   100% {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
   }
 }
 
 /*************swing hair************/
 @keyframes swinghair {
   0% {
-    transform: rotate(6deg);
+    transform: rotate(10deg);
   }
 
   100% {
-    transform: rotate(-6deg);
+    transform: rotate(-10deg);
   }
 }
