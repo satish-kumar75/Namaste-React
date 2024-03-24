@@ -1,0 +1,25 @@
+.login-container {
+    min-height: 100vh;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        height: 25rem;
+        aspect-ratio: 1;
+    }
+
+    img:nth-child(1) {
+        top: 20%;
+        left: -3%;
+    }
+
+    img:nth-child(2) {
+        top: 10%;
+        right: -10%;
+    }
+
+    img:nth-child(3) {
+        top: 50%;
+        right: 3%;
+    }
+}

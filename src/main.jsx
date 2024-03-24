@@ -13,6 +13,7 @@ import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./layouts/Cart";
 import Footer from "./components/Footer/Footer";
+import Login from "./components/Login/Login";
 
 const About = lazy(() => import("./layouts/About"));
 const Grocery = lazy(() => import("./layouts/Grocery"));
@@ -67,6 +68,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
     errorElement: (

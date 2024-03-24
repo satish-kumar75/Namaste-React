@@ -58,8 +58,11 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <Toggle />
         </div>
+        <div className="login-btn">
+          <NavLink to="/login">Login</NavLink>
+        </div>
+        <Toggle />
       </div>
     </div>
   );

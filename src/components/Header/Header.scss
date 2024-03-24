@@ -97,8 +97,7 @@
 
   @media screen and (max-width: 767px) {
     .nav-item {
-      width: 48%;
-      justify-content: space-between;
+      order: 4;
 
       .nav-toggle {
         order: 1;

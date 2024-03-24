@@ -227,6 +227,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .body {
+    margin-top: 48px;
+  }
+
   .filter {
     gap: 15px !important;
     flex-direction: column;
